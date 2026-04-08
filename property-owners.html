@@ -42,6 +42,15 @@
     .nav-lk{display:flex;align-items:center;gap:32px;list-style:none}
     .nav-lk a{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);opacity:.9;text-decoration:none;transition:color .15s}
     .nav-lk a:hover{color:var(--white)}
+        .nav-drop{position:relative}
+    .nav-drop-btn{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);background:none;border:none;cursor:pointer;opacity:.9;transition:opacity .15s;padding:0;display:flex;align-items:center;gap:4px}
+    .nav-drop-btn:hover{opacity:1}
+    .nav-caret{font-size:10px;transition:transform .2s}
+    .nav-drop.open .nav-caret{transform:rotate(180deg)}
+    .nav-drop-menu{display:none;position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:rgba(26,26,46,.97);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:180px;list-style:none;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+    .nav-drop.open .nav-drop-menu{display:block}
+    .nav-drop-menu a{display:block;padding:10px 20px;font-family:'DM Sans',sans-serif;font-weight:500;font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;transition:color .15s}
+    .nav-drop-menu a:hover{color:var(--white)}
     .nav-ct{display:flex;align-items:center;gap:12px}
     .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
     .ham span{display:block;width:22px;height:2px;background:var(--white)}
@@ -159,9 +168,9 @@
       <li class="nav-drop">
         <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true" type="button">Stories <span class="nav-caret">▾</span></button>
         <ul class="nav-drop-menu" role="menu">
-          <li role="none"><a href="/media" role="menuitem">The Ownership Conversation</a></li>
           <li role="none"><a href="/events" role="menuitem">Events</a></li>
-          <li role="none"><a href="/blog/congress-told-wall-street-stop-buying-your-neighborhood" role="menuitem">Latest Article</a></li>
+          <li role="none"><a href="/blog/congress-told-wall-street-stop-buying-your-neighborhood" role="menuitem">Blog</a></li>
+          <li role="none"><a href="/media" role="menuitem">Media</a></li>
         </ul>
       </li>
     </ul>

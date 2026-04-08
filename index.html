@@ -60,6 +60,15 @@
     .nav-lk{display:flex;align-items:center;gap:32px;list-style:none}
     .nav-lk a{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);text-decoration:none;opacity:.9;transition:opacity .15s}
     .nav-lk a:hover{opacity:1}
+    .nav-drop{position:relative}
+    .nav-drop-btn{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);background:none;border:none;cursor:pointer;opacity:.9;transition:opacity .15s;padding:0;display:flex;align-items:center;gap:4px}
+    .nav-drop-btn:hover{opacity:1}
+    .nav-caret{font-size:10px;transition:transform .2s}
+    .nav-drop.open .nav-caret{transform:rotate(180deg)}
+    .nav-drop-menu{display:none;position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:rgba(26,26,46,.97);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:180px;list-style:none;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+    .nav-drop.open .nav-drop-menu{display:block}
+    .nav-drop-menu a{display:block;padding:10px 20px;font-family:'DM Sans',sans-serif;font-weight:500;font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;transition:color .15s}
+    .nav-drop-menu a:hover{color:var(--white)}
     .nav-ct{display:flex;align-items:center;gap:12px}
     .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
     .ham span{display:block;width:22px;height:2px;background:var(--white)}
@@ -239,9 +248,9 @@
       <li class="nav-drop">
         <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true" type="button">Stories <span class="nav-caret">▾</span></button>
         <ul class="nav-drop-menu" role="menu">
-          <li role="none"><a href="/media" role="menuitem">The Ownership Conversation</a></li>
           <li role="none"><a href="/events" role="menuitem">Events</a></li>
-          <li role="none"><a href="/blog/congress-told-wall-street-stop-buying-your-neighborhood" role="menuitem">Latest Article</a></li>
+          <li role="none"><a href="/blog/congress-told-wall-street-stop-buying-your-neighborhood" role="menuitem">Blog</a></li>
+          <li role="none"><a href="/media" role="menuitem">Media</a></li>
         </ul>
       </li>
     </ul>
@@ -266,8 +275,8 @@
   <div class="gh" style="bottom:-40px;right:-60px;font-size:clamp(120px,18vw,260px);color:rgba(255,255,255,.04)">reSpace</div>
   <div class="hero-c">
     <span class="lbl lbl--lt">Own your neighborhood.</span>
-    <h1>The housing market said no. <em>We said watch us.</em></h1>
-    <p class="hero-sub fu fu-1">reSpace is co-homeownership for people who refuse to rent their whole lives. Private suite. Shared spaces. Real ownership. No trust fund required. ;-)</p>
+    <h1>The housing market said no.<br><em>We said watch us.</em></h1>
+    <p class="hero-sub fu fu-1">reSpace is co-homeownership for people who refuse to rent their whole lives. Private suite. Shared spaces. Real ownership. No trust fund required.</p>
     <div class="hero-act fu fu-2">
       <a href="#gap" class="btn btn--c">See what your rent is really costing you</a>
       <a href="#how" class="btn btn--ow">How It Works</a>
@@ -356,7 +365,7 @@
         <img src="https://www.respace.co/assets/LeschiExterior_1-B2u_U1YN.webp" alt="The Leschi Collection, West Leschi, Seattle" style="width:100%;height:100%;object-fit:cover;object-position:center" />
       </div>
       <div>
-        <h3>Six suites. One community. <em>Your neighborhood.</em></h3>
+        <h3>Six Suites. One Community.<br><em>Your Neighborhood.</em></h3>
         <p style="line-height:1.75;margin:16px 0">Premier Seattle neighborhood. Lake Washington views. Each suite includes a private ensuite bath, walk-in closet, private washer/dryer, wet bar, sitting area, and workspace. Shared kitchen, living room, and outdoor spaces.</p>
         <div class="suite-grid">
           <div class="suite"><div class="suite-nm">The Gable</div></div>
@@ -375,7 +384,7 @@
 
 <!-- ═══ HOW IT WORKS ═══ -->
 <section id="how" style="background:var(--navy);padding:120px 0;position:relative;overflow:hidden">
-  <div class="gh" style="top:50%;left:-60px;transform:translateY(-50%);font-size:clamp(120px,18vw,240px);color:rgba(255,255,255,.025)">re</div>
+  <div class="gh" style="bottom:-60px;right:-80px;font-size:clamp(120px,18vw,240px);color:rgba(255,255,255,.025)">re</div>
   <div class="ctr">
     <div class="how-hd fu"><span class="lbl lbl--lt">The process</span><h2>Seven steps to owning your home.</h2></div>
     <div class="steps" id="steps">
