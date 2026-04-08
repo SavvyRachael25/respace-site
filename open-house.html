@@ -109,7 +109,9 @@
     .suites-venue{font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;color:var(--body);opacity:.65;margin-bottom:48px;margin-top:4px}
     .suites-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     @media(max-width:700px){.suites-grid{grid-template-columns:1fr}}
-    .suite-card{background:var(--white);border-radius:4px;padding:36px;border:1px solid rgba(26,26,46,.07)}
+    .suite-card{background:var(--white);border-radius:4px;overflow:hidden;border:1px solid rgba(26,26,46,.07)}
+    .suite-img{width:100%;height:220px;object-fit:cover;object-position:center;display:block}
+    .suite-body{padding:28px 36px 36px}
     .suite-name{font-family:'Clash Display',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-bottom:10px}
     .suite-desc{font-size:15px;line-height:1.65;color:var(--body);margin-bottom:16px}
     .suite-price{font-family:'Clash Display',sans-serif;font-weight:700;font-size:26px;color:var(--coral)}
@@ -259,33 +261,48 @@
     <div class="suites-grid">
 
       <div class="suite-card">
-        <div class="suite-name">The Atelier</div>
-        <p class="suite-desc">Lower level suite with private entrance, direct access to lower wet bar, media room + shared backyard space.</p>
-        <div class="suite-price">Own From $249,000</div>
+        <img class="suite-img" src="https://assets.cdn.filesafe.space/Pg5fHv12BxlpwrUiHfJ6/media/699a3c2c55d8bc40fd0b5cb1.png" alt="The Atelier suite interior" />
+        <div class="suite-body">
+          <div class="suite-name">The Atelier</div>
+          <p class="suite-desc">Lower level suite with private entrance, direct access to lower wet bar, media room + shared backyard space.</p>
+          <div class="suite-price">Own From $249,000</div>
+        </div>
       </div>
 
       <div class="suite-card">
-        <div class="suite-name">The Promenade</div>
-        <p class="suite-desc">Second floor suite with private sitting area, wet bar, coffee station and wraparound balcony.</p>
-        <div class="suite-price">Own From $197,500</div>
+        <img class="suite-img" src="https://assets.cdn.filesafe.space/Pg5fHv12BxlpwrUiHfJ6/media/699a612808245e2e377ef58a.png" alt="The Promenade suite interior" />
+        <div class="suite-body">
+          <div class="suite-name">The Promenade</div>
+          <p class="suite-desc">Second floor suite with private sitting area, wet bar, coffee station and wraparound balcony.</p>
+          <div class="suite-price">Own From $197,500</div>
+        </div>
       </div>
 
       <div class="suite-card">
-        <div class="suite-name">The Gable</div>
-        <p class="suite-desc">Southwest facing second floor suite with wet bar + coffee station.</p>
-        <div class="suite-price">Own From $124,500</div>
+        <img class="suite-img" src="https://assets.cdn.filesafe.space/Pg5fHv12BxlpwrUiHfJ6/media/699a6358df9bdfc84ad8377e.png" alt="The Gable suite interior" />
+        <div class="suite-body">
+          <div class="suite-name">The Gable</div>
+          <p class="suite-desc">Southwest facing second floor suite with wet bar + coffee station.</p>
+          <div class="suite-price">Own From $124,500</div>
+        </div>
       </div>
 
       <div class="suite-card">
-        <div class="suite-name">The Conservatory</div>
-        <p class="suite-desc">Main floor suite with same floor access to shared coworking space, living room + kitchen.</p>
-        <div class="suite-price">Own From $189,500</div>
+        <img class="suite-img" src="https://assets.cdn.filesafe.space/Pg5fHv12BxlpwrUiHfJ6/media/699a667255d8bc5284173089.png" alt="The Conservatory suite interior" />
+        <div class="suite-body">
+          <div class="suite-name">The Conservatory</div>
+          <p class="suite-desc">Main floor suite with same floor access to shared coworking space, living room + kitchen.</p>
+          <div class="suite-price">Own From $189,500</div>
+        </div>
       </div>
 
       <div class="suite-card">
-        <div class="suite-name">The Outlook</div>
-        <p class="suite-desc">Third floor suite with wet bar, coffee station and stunning skyline views.</p>
-        <div class="suite-price">Own From $197,500</div>
+        <img class="suite-img" src="https://assets.cdn.filesafe.space/Pg5fHv12BxlpwrUiHfJ6/media/699a3c2c20c035f24acba429.png" alt="The Outlook suite interior" />
+        <div class="suite-body">
+          <div class="suite-name">The Outlook</div>
+          <p class="suite-desc">Third floor suite with wet bar, coffee station and stunning skyline views.</p>
+          <div class="suite-price">Own From $197,500</div>
+        </div>
       </div>
 
     </div>
