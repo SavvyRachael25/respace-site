@@ -20,8 +20,8 @@ em{font-style:normal;color:var(--coral)}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 @media(max-width:900px){.split{grid-template-columns:1fr;gap:48px}}
 .sec{padding:120px 0;position:relative;overflow:hidden}
-.lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:12px}
-.lbl--lt{color:rgba(255,255,255,.9)}
+.lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:12px}
+.lbl--lt{color:var(--white);opacity:.9}
 .wm{font-family:'DM Sans',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.02em;text-decoration:none;display:inline-flex;align-items:baseline}
 .wm .re{color:var(--coral)}.wm .sp{color:var(--navy)}.wm--lt .sp{color:var(--white)}
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;padding:14px 28px;border-radius:2px;transition:transform .15s,box-shadow .15s,background .15s}
@@ -37,8 +37,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,46,.6)
 nav.scrolled{background:rgba(26,26,46,.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto;padding:0 32px}
 .nav-lk{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-lk a{font-family:'DM Sans',sans-serif;font-weight:500;font-size:14px;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s}
-.nav-lk a:hover{color:var(--white)}
+.nav-lk a{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);opacity:.9;text-decoration:none;transition:opacity .15s}
+.nav-lk a:hover{opacity:1}
 .nav-ct{display:flex;align-items:center;gap:12px}
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .ham span{display:block;width:22px;height:2px;background:var(--white)}
