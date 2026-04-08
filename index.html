@@ -214,7 +214,7 @@
 
   </style>
   <meta property="og:title" content="reSpace - Own your neighborhood." />
-  <meta property="og:description" content="Co-homeownership for people who refuse to rent their whole lives. Private suite, shared spaces, real ownership starting at $118,750 in Seattle." />
+  <meta property="og:description" content="Co-homeownership for people who refuse to rent their whole lives. Private suite. Shared spaces. Real ownership. A new category of homeownership." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://respace.co" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"reSpace","url":"https://respace.co","logo":"https://respace.co/logo.png","description":"Structured co-homeownership for people who refuse to rent their whole lives.","address":{"@type":"PostalAddress","streetAddress":"123 North 35th Street","addressLocality":"Seattle","addressRegion":"WA","postalCode":"98103","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","telephone":"(206) 222-6322","email":"office@reSpace.co","contactType":"sales"},"sameAs":["https://www.instagram.com/respacehomes","https://www.linkedin.com/company/respace"]}</script>
@@ -222,28 +222,41 @@
 <body>
 
 <!-- ═══ NAV ═══ -->
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div class="ann-bar" id="ann-bar">
+  <a href="/open-house" class="ann-link"><span class="ann-tag">OPEN HOUSE</span> The First Collection — Now Showing <span class="ann-arr">→</span></a>
+  <button class="ann-x" onclick="document.getElementById('ann-bar').style.display='none'" aria-label="Dismiss announcement" type="button">×</button>
+</div>
+
+<!-- ═══ NAV ═══ -->
 <nav id="nav" aria-label="Main navigation">
   <div class="nav-in">
     <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
     <ul class="nav-lk">
-      <li><a href="/buyers">Own</a></li>
-      <li><a href="#props">Properties</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="/property-owners">For Owners</a></li>
-      <li><a href="/brokers">Brokers</a></li>
+      <li><a href="/buyers">Future Owners</a></li>
+      <li><a href="/#how">How It Works</a></li>
+      <li><a href="/brokers">Partners</a></li>
+      <li class="nav-drop">
+        <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true" type="button">Stories <span class="nav-caret">▾</span></button>
+        <ul class="nav-drop-menu" role="menu">
+          <li role="none"><a href="/media" role="menuitem">The Ownership Conversation</a></li>
+          <li role="none"><a href="/events" role="menuitem">Events</a></li>
+          <li role="none"><a href="/blog/congress-told-wall-street-stop-buying-your-neighborhood" role="menuitem">Latest Article</a></li>
+        </ul>
+      </li>
     </ul>
-    <div class="nav-ct"><a href="#cta" class="btn btn--c btn--sm">Find Your Space</a></div>
+    <div class="nav-ct"><a href="/#cta" class="btn btn--c btn--sm">Create Your Space</a></div>
     <button class="ham" aria-label="Open navigation menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('mob').classList.toggle('open').toString())" type="button"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mob" id="mob">
   <button class="mob-x" aria-label="Close navigation menu" onclick="document.getElementById('mob').classList.remove('open')" type="button">&times;</button>
-  <a href="/buyers" onclick="document.getElementById('mob').classList.remove('open')">Own</a>
-  <a href="#props" onclick="document.getElementById('mob').classList.remove('open')">Properties</a>
-  <a href="#how" onclick="document.getElementById('mob').classList.remove('open')">How It Works</a>
-  <a href="/property-owners" onclick="document.getElementById('mob').classList.remove('open')">For Owners</a>
-  <a href="/brokers" onclick="document.getElementById('mob').classList.remove('open')">Brokers</a>
-  <a href="#cta" class="btn btn--c" onclick="document.getElementById('mob').classList.remove('open')">Find Your Space</a>
+  <a href="/buyers" onclick="document.getElementById('mob').classList.remove('open')">Future Owners</a>
+  <a href="/#how" onclick="document.getElementById('mob').classList.remove('open')">How It Works</a>
+  <a href="/brokers" onclick="document.getElementById('mob').classList.remove('open')">Partners</a>
+  <a href="/media" onclick="document.getElementById('mob').classList.remove('open')">Stories</a>
+  <a href="/events" onclick="document.getElementById('mob').classList.remove('open')">Events</a>
+  <a href="/#cta" class="btn btn--c" onclick="document.getElementById('mob').classList.remove('open')">Create Your Space</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -254,12 +267,6 @@
   <div class="hero-c">
     <span class="lbl lbl--lt">Own your neighborhood.</span>
     <h1>The housing market said no. <em>We said watch us.</em></h1>
-    <div class="hero-badge fu">
-      <div>
-        <div class="price">From $118,750</div>
-        <div class="desc">The Leschi Collection. Co-homeownership<br>in Seattle's most desired neighborhoods.</div>
-      </div>
-    </div>
     <p class="hero-sub fu fu-1">reSpace is co-homeownership for people who refuse to rent their whole lives. Private suite. Shared spaces. Real ownership. No trust fund required. ;-)</p>
     <div class="hero-act fu fu-2">
       <a href="#gap" class="btn btn--c">See what your rent is really costing you</a>
@@ -353,12 +360,12 @@
         <h3>Six suites. One community. <em>Your neighborhood.</em></h3>
         <p style="line-height:1.75;margin:16px 0">Premier Seattle neighborhood. Lake Washington views. Each suite includes a private ensuite bath, walk-in closet, private washer/dryer, wet bar, sitting area, and workspace. Shared kitchen, living room, and outdoor spaces.</p>
         <div class="suite-grid">
-          <div class="suite"><div class="suite-nm">The Gable</div><div class="suite-pr">$187,500</div></div>
-          <div class="suite"><div class="suite-nm">The Conservatory</div><div class="suite-pr">$159,500</div></div>
-          <div class="suite"><div class="suite-nm">The Promenade</div><div class="suite-pr">$249,000</div></div>
-          <div class="suite"><div class="suite-nm">The Outlook A</div><div class="suite-pr">$118,750</div></div>
-          <div class="suite"><div class="suite-nm">The Outlook B</div><div class="suite-pr">$118,750</div></div>
-          <div class="suite"><div class="suite-nm">The Atelier</div><div class="suite-pr">$249,000</div></div>
+          <div class="suite"><div class="suite-nm">The Gable</div></div>
+          <div class="suite"><div class="suite-nm">The Conservatory</div></div>
+          <div class="suite"><div class="suite-nm">The Promenade</div></div>
+          <div class="suite"><div class="suite-nm">The Outlook A</div></div>
+          <div class="suite"><div class="suite-nm">The Outlook B</div></div>
+          <div class="suite"><div class="suite-nm">The Atelier</div></div>
         </div>
         <p style="font-size:14px;margin-top:16px">All-inclusive monthly costs comparable to renting a one-bedroom. Individual ownership via membership interest. In-house financing available.</p>
         <a href="#cta" class="btn btn--c" style="margin-top:24px">Hold Your Space</a>
@@ -504,11 +511,28 @@
       <div class="ft-brand">
         <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
         <p>Co-homeownership for people who refuse to rent their whole lives.</p>
-        <div class="ft-tag">The new way to own.</div>
+        <div class="ft-tag">Own the neighborhood.</div>
       </div>
-      <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#how">How It Works</a></li><li><a href="#props">Properties</a></li><li><a href="#">Blog</a></li></ul></div>
-      <div class="ft-col"><h4>For You</h4><ul><li><a href="/buyers">Buyers</a></li><li><a href="/property-owners">Property Owners</a></li><li><a href="/brokers">Brokers</a></li><li><a href="#">The Foundation</a></li></ul></div>
-      <div class="ft-col"><h4>Connect</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">YouTube</a></li><li><a href="mailto:office@reSpace.co">office@reSpace.co</a></li></ul></div>
+      <div class="ft-col"><h4>Company</h4><ul>
+        <li><a href="/#why">About</a></li>
+        <li><a href="/#how">How It Works</a></li>
+        <li><a href="/#props">Properties</a></li>
+        <li><a href="/media">The Ownership Conversation</a></li>
+        <li><a href="/events">Events</a></li>
+      </ul></div>
+      <div class="ft-col"><h4>For You</h4><ul>
+        <li><a href="/buyers">Future Owners</a></li>
+        <li><a href="/property-owners">Property Owners</a></li>
+        <li><a href="/brokers">Partners</a></li>
+        <li><a href="/investors">Investors</a></li>
+      </ul></div>
+      <div class="ft-col"><h4>Connect</h4><ul>
+        <li><a href="https://instagram.com/respace_inc" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/respace-co-homeownership" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://youtube.com/@respaceinc" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.facebook.com/respacecohomeownership/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="mailto:office@reSpace.co">office@reSpace.co</a></li>
+      </ul></div>
     </div>
     <div class="ft-bot">
       <p>&copy; 2026 reSpace. All rights reserved.</p>
@@ -543,5 +567,16 @@ document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Own a Home Through reSpace Co-Homeownership","description":"Seven steps to owning your home through structured co-homeownership.","step":[{"@type":"HowToStep","name":"Find your property","text":"Browse current properties in the neighborhoods you want to live in."},{"@type":"HowToStep","name":"Apply","text":"Submit your application. We review your financials, goals, and timeline. No W-2 required."},{"@type":"HowToStep","name":"Get financed","text":"In-house financing with approval in 7 to 10 days. Built for gig workers and self-employed buyers."},{"@type":"HowToStep","name":"Form your group","text":"Bring your people or we help you find them. Each co-owner reserves a membership interest."},{"@type":"HowToStep","name":"Close","text":"We handle the LLC, operating agreement, and legal structure. You sign and get the keys."},{"@type":"HowToStep","name":"Move in","text":"Your suite is yours. The common spaces are shared. The neighborhood is home."},{"@type":"HowToStep","name":"Own your future","text":"Full appreciation retained as the property grows in value. Your membership interest can be sold."}]}</script>
+<script>
+// Stories dropdown
+document.querySelectorAll('.nav-drop').forEach(function(d){
+  var btn=d.querySelector('.nav-drop-btn');
+  btn.addEventListener('click',function(){
+    d.classList.toggle('open');
+    btn.setAttribute('aria-expanded', d.classList.contains('open'));
+  });
+  document.addEventListener('click',function(e){if(!d.contains(e.target))d.classList.remove('open');});
+});
+</script>
 </body>
 </html>

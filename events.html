@@ -129,29 +129,41 @@
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div class="ann-bar" id="ann-bar">
+  <a href="/open-house" class="ann-link"><span class="ann-tag">OPEN HOUSE</span> The First Collection — Now Showing <span class="ann-arr">→</span></a>
+  <button class="ann-x" onclick="document.getElementById('ann-bar').style.display='none'" aria-label="Dismiss announcement" type="button">×</button>
+</div>
+
+<!-- ═══ NAV ═══ -->
 <nav id="nav" aria-label="Main navigation">
   <div class="nav-in">
     <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
     <ul class="nav-lk">
-      <li><a href="/buyers">Own</a></li>
-      <li><a href="/#props">Properties</a></li>
+      <li><a href="/buyers">Future Owners</a></li>
       <li><a href="/#how">How It Works</a></li>
-      <li><a href="/property-owners">For Owners</a></li>
-      <li><a href="/brokers">Brokers</a></li>
+      <li><a href="/brokers">Partners</a></li>
+      <li class="nav-drop">
+        <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true" type="button">Stories <span class="nav-caret">▾</span></button>
+        <ul class="nav-drop-menu" role="menu">
+          <li role="none"><a href="/media" role="menuitem">The Ownership Conversation</a></li>
+          <li role="none"><a href="/events" role="menuitem">Events</a></li>
+          <li role="none"><a href="/blog/congress-told-wall-street-stop-buying-your-neighborhood" role="menuitem">Latest Article</a></li>
+        </ul>
+      </li>
     </ul>
-    <div class="nav-ct"><a href="/open-house" class="btn btn--c btn--sm">Find Your Space</a></div>
+    <div class="nav-ct"><a href="/#cta" class="btn btn--c btn--sm">Create Your Space</a></div>
     <button class="ham" aria-label="Open navigation menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('mob').classList.toggle('open').toString())" type="button"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mob" id="mob">
   <button class="mob-x" aria-label="Close navigation menu" onclick="document.getElementById('mob').classList.remove('open')" type="button">&times;</button>
-  <a href="/buyers" onclick="document.getElementById('mob').classList.remove('open')">Own</a>
-  <a href="/#props" onclick="document.getElementById('mob').classList.remove('open')">Properties</a>
+  <a href="/buyers" onclick="document.getElementById('mob').classList.remove('open')">Future Owners</a>
   <a href="/#how" onclick="document.getElementById('mob').classList.remove('open')">How It Works</a>
-  <a href="/property-owners" onclick="document.getElementById('mob').classList.remove('open')">For Owners</a>
-  <a href="/brokers" onclick="document.getElementById('mob').classList.remove('open')">Brokers</a>
-  <a href="/open-house" class="btn btn--c" onclick="document.getElementById('mob').classList.remove('open')">Find Your Space</a>
+  <a href="/brokers" onclick="document.getElementById('mob').classList.remove('open')">Partners</a>
+  <a href="/media" onclick="document.getElementById('mob').classList.remove('open')">Stories</a>
+  <a href="/events" onclick="document.getElementById('mob').classList.remove('open')">Events</a>
+  <a href="/#cta" class="btn btn--c" onclick="document.getElementById('mob').classList.remove('open')">Create Your Space</a>
 </div>
 
 <!-- HERO -->
@@ -295,37 +307,28 @@
       <div class="ft-brand">
         <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
         <p>Co-homeownership for people who refuse to rent their whole lives.</p>
-        <div class="ft-tag">The new way to own.</div>
+        <div class="ft-tag">Own the neighborhood.</div>
       </div>
-      <div class="ft-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/#why">About</a></li>
-          <li><a href="/#how">How It Works</a></li>
-          <li><a href="/#props">Properties</a></li>
-          <li><a href="/media">The Ownership Conversation</a></li>
-          <li><a href="/events">Events</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <h4>For You</h4>
-        <ul>
-          <li><a href="/buyers">Buyers</a></li>
-          <li><a href="/property-owners">Property Owners</a></li>
-          <li><a href="/brokers">Brokers</a></li>
-          <li><a href="/investors">Investors</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="https://instagram.com/respace_inc" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/company/respace-co-homeownership" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://youtube.com/@respaceinc" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://www.facebook.com/respacecohomeownership/" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="mailto:office@reSpace.co">office@reSpace.co</a></li>
-        </ul>
-      </div>
+      <div class="ft-col"><h4>Company</h4><ul>
+        <li><a href="/#why">About</a></li>
+        <li><a href="/#how">How It Works</a></li>
+        <li><a href="/#props">Properties</a></li>
+        <li><a href="/media">The Ownership Conversation</a></li>
+        <li><a href="/events">Events</a></li>
+      </ul></div>
+      <div class="ft-col"><h4>For You</h4><ul>
+        <li><a href="/buyers">Future Owners</a></li>
+        <li><a href="/property-owners">Property Owners</a></li>
+        <li><a href="/brokers">Partners</a></li>
+        <li><a href="/investors">Investors</a></li>
+      </ul></div>
+      <div class="ft-col"><h4>Connect</h4><ul>
+        <li><a href="https://instagram.com/respace_inc" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/respace-co-homeownership" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://youtube.com/@respaceinc" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.facebook.com/respacecohomeownership/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="mailto:office@reSpace.co">office@reSpace.co</a></li>
+      </ul></div>
     </div>
     <div class="ft-bot">
       <p>&copy; 2026 reSpace. All rights reserved.</p>
@@ -354,6 +357,17 @@ window.addEventListener('scroll',()=>{document.getElementById('nav').classList.t
     .catch(function(){ne.textContent='Something went wrong. Try again.';ne.style.display='block';nb.disabled=false;nb.textContent='Subscribe';});
   });
 })();
+</script>
+<script>
+// Stories dropdown
+document.querySelectorAll('.nav-drop').forEach(function(d){
+  var btn=d.querySelector('.nav-drop-btn');
+  btn.addEventListener('click',function(){
+    d.classList.toggle('open');
+    btn.setAttribute('aria-expanded', d.classList.contains('open'));
+  });
+  document.addEventListener('click',function(e){if(!d.contains(e.target))d.classList.remove('open');});
+});
 </script>
 </body>
 </html>
