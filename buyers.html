@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>reSpace - Own in the neighborhood you want.</title>
+  <meta name="description" content="Co-homeownership starting at $118,750 in Seattle's most desired neighborhoods. Private suite, shared spaces, real ownership." />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── reSpace Design System (brand.respace.co v1.5) ──
+       Clash Display headlines | DM Sans body | Navy Coral Sand White Sage
+       Buyer page: Archetype = The Guide + The Mirror
+       Tone: Warm, empowering, identity-shifting, concrete
+       Tagline: "Live Large. Pay Small." (BUYER-FACING ONLY) ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#1A1A2E;--coral:#E8604C;--sand:#F5EFE6;--white:#FFFFFF;--sage:#7C9A7E;--body:#444444}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-weight:400;font-size:17px;color:var(--body);background:var(--white);overflow-x:hidden;line-height:1.6}
+    h1,h2,h3{font-family:'Clash Display',sans-serif;color:var(--navy);letter-spacing:-0.02em}
+    h1{font-weight:700;font-size:clamp(48px,7vw,88px);line-height:0.95}
+    h2{font-weight:600;font-size:clamp(32px,4.5vw,56px);line-height:1.0;letter-spacing:-0.01em}
+    h3{font-weight:600;font-size:clamp(20px,2.5vw,30px);line-height:1.15}
+    h4{font-family:'DM Sans',sans-serif;font-weight:700;font-size:18px;color:var(--navy)}
+    em{font-style:normal;color:var(--coral)}
+    .ctr{max-width:1200px;margin:0 auto;padding:0 32px}
+    @media(max-width:768px){.ctr{padding:0 20px}}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    @media(max-width:900px){.split{grid-template-columns:1fr;gap:48px}}
+    .sec{padding:120px 0;position:relative;overflow:hidden}
+    .lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:12px}
+    .lbl--lt{color:var(--white)}
+    .cr{width:48px;height:3px;background:var(--coral);margin:24px 0}
+    .wm{font-family:'DM Sans',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.02em;text-decoration:none;display:inline-flex;align-items:baseline}
+    .wm .re{color:var(--coral)}.wm .sp{color:var(--navy)}.wm--lt .sp{color:var(--white)}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;padding:14px 28px;border-radius:2px;transition:transform .15s,box-shadow .15s,background .15s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn--c{background:var(--coral);color:var(--white)}.btn--c:hover{background:#d4503f;box-shadow:0 4px 20px rgba(232,96,76,.35)}
+    .btn--n{background:var(--navy);color:var(--white)}.btn--n:hover{background:#0f0f1e;box-shadow:0 4px 20px rgba(26,26,46,.35)}
+    .btn--ow{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5)}.btn--ow:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
+    .btn--on{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}.btn--on:hover{background:var(--navy);color:var(--white)}
+    .btn--sm{padding:10px 20px;font-size:14px}
+    .gh{position:absolute;font-family:'Clash Display',sans-serif;font-weight:700;pointer-events:none;user-select:none;line-height:1;white-space:nowrap}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,46,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .3s,box-shadow .3s}
+    nav.scrolled{background:rgba(26,26,46,.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto;padding:0 32px}
+    .nav-lk{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-lk a{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);opacity:.9;text-decoration:none;transition:color .15s}
+    .nav-lk a:hover{color:var(--white)}
+    .nav-ct{display:flex;align-items:center;gap:12px}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .ham span{display:block;width:22px;height:2px;background:var(--white)}
+    @media(max-width:960px){.nav-lk,.nav-ct{display:none}.ham{display:flex}}
+    .mob{display:none;position:fixed;inset:0;background:var(--navy);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+    .mob.open{display:flex}
+    .mob a{font-family:'Clash Display',sans-serif;font-weight:600;font-size:28px;color:var(--white);text-decoration:none}
+    .mob a:hover{color:var(--coral)}
+    .mob-x{position:absolute;top:24px;right:32px;font-size:28px;color:var(--white);cursor:pointer;background:none;border:none}
+
+    /* ═══ HERO ═══ */
+    #hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;margin-bottom:-1px}
+    .hero-bg{position:absolute;inset:0;background-image:url('https://d2xsxph8kpxj0f.cloudfront.net/310519663333310015/UUfDD9B2a3czptPTkkTF8D/hero_v3_04-CJqnyMwgbNdeo598JjUpWy.png');background-size:cover;background-position:center 30%;transform:scale(1.02);transition:transform 8s ease}
+    .hero-bg.loaded{transform:scale(1)}
+    .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,46,.55) 0%,rgba(26,26,46,.45) 30%,rgba(26,26,46,.55) 50%,rgba(26,26,46,.85) 75%,var(--navy) 100%)}
+    .hero-c{position:relative;z-index:2;padding:0 32px 80px;max-width:1200px;margin:0 auto;width:100%}
+    .hero-c h1{color:var(--white)}
+    .hero-sub{margin-top:24px;max-width:560px;font-size:17px;line-height:1.7;color:rgba(255,255,255,.9)}
+    .hero-act{margin-top:32px;display:flex;gap:16px;flex-wrap:wrap}
+
+    /* ═══ WEALTH GAP ═══ */
+    #gap{background:var(--navy);padding:100px 0;position:relative;overflow:hidden}
+    .gap-in{position:relative;z-index:1;text-align:center;max-width:800px;margin:0 auto}
+    .gap-in h2{color:var(--white);margin-bottom:28px}
+    .gap-in>p{font-size:18px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:20px}
+    .gap-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:48px 0}
+    .gap-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,.08)}
+    .gap-cell:last-child{border-right:none}
+    .gap-val{font-family:'Clash Display',sans-serif;font-weight:700;font-size:clamp(36px,5vw,60px);color:var(--coral);line-height:1}
+    .gap-lbl{margin-top:10px;font-size:15px;color:rgba(255,255,255,.72);line-height:1.5}
+    @media(max-width:768px){.gap-row{grid-template-columns:1fr}.gap-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:24px 0}.gap-cell:last-child{border-bottom:none}}
+
+    /* ═══ WHAT YOU GET ═══ */
+    .feat-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+    .feat-li{display:flex;align-items:flex-start;gap:14px}
+    .feat-dot{width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0;margin-top:8px}
+    .feat-txt{font-size:16px;line-height:1.55}
+    .img-ph{width:100%;height:100%;background:linear-gradient(135deg,#e0d8cc,#ccc4b8);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;border-radius:4px}
+    .img-ph span{font-family:'DM Sans',sans-serif;font-size:12px;color:#999;letter-spacing:.08em;text-transform:uppercase}
+
+    /* ═══ SUITES ═══ */
+    .suite-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:900px){.suite-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.suite-grid{grid-template-columns:1fr}}
+    .suite{background:var(--white);border-radius:4px;padding:28px;border:1px solid rgba(26,26,46,.06);transition:transform .2s,box-shadow .2s}
+    .suite:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(26,26,46,.1)}
+    .suite-nm{font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:6px}
+    .suite-pr{font-family:'Clash Display',sans-serif;font-weight:600;font-size:28px;color:var(--coral);line-height:1}
+    .suite-desc{font-size:13px;color:var(--body);margin-top:8px;line-height:1.5}
+    .suite-monthly{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(68,68,68,.6);margin-top:6px}
+
+    /* ═══ STEPS ═══ */
+    .steps{display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative;z-index:1}
+    .step{padding:0 10px;cursor:pointer;border-top:3px solid rgba(255,255,255,.1);padding-top:18px;transition:border-color .2s}
+    .step:hover,.step.active{border-top-color:var(--coral)}
+    .step-no{font-family:'DM Sans',sans-serif;font-weight:600;font-size:11px;color:var(--coral);letter-spacing:.08em;margin-bottom:8px}
+    .step-t{font-family:'Clash Display',sans-serif;font-weight:600;font-size:14px;color:rgba(255,255,255,.45);line-height:1.3;margin-bottom:6px;transition:color .2s,font-size .3s}
+    .step.active .step-t{color:var(--white);font-size:16px}
+    .step-d{font-size:13px;color:rgba(255,255,255,0);line-height:1.55;max-height:0;overflow:hidden;transition:max-height .4s,color .3s .1s}
+    .step.active .step-d{max-height:200px;color:rgba(255,255,255,.65)}
+    @media(max-width:1024px){.steps{grid-template-columns:repeat(4,1fr);gap:16px}}
+    @media(max-width:600px){.steps{grid-template-columns:1fr;gap:0}.step{border-top:none;border-left:3px solid rgba(255,255,255,.1);padding:16px 0 16px 20px}.step.active{border-left-color:var(--coral)}.step.active .step-d{max-height:300px}}
+
+    /* ═══ FINANCING ═══ */
+    .fin-card{background:var(--navy);border-radius:4px;padding:48px}
+    .fin-card h3{color:var(--white);margin-bottom:24px}
+    .fin-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+    .fin-li{display:flex;align-items:flex-start;gap:14px}
+    .fin-dot{width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0;margin-top:8px}
+    .fin-txt{font-size:15px;color:rgba(255,255,255,.72);line-height:1.55}
+    .fin-txt strong{color:var(--white);font-weight:700}
+    .fin-stats{margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:40px}
+    .fst-v{font-family:'Clash Display',sans-serif;font-weight:700;font-size:30px;color:var(--coral)}
+    .fst-l{font-size:13px;color:rgba(255,255,255,.65);margin-top:4px}
+
+    /* ═══ BUYER SEGMENTS ═══ */
+    .seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.seg-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.seg-grid{grid-template-columns:1fr}}
+    .seg{background:var(--sand);border-radius:4px;padding:32px;transition:transform .2s}
+    .seg:hover{transform:translateY(-3px)}
+    .seg-icon{font-size:28px;margin-bottom:12px;display:block}
+    .seg h4{margin-bottom:8px}
+    .seg p{font-size:15px;line-height:1.55}
+
+    /* ═══ FAQ ═══ */
+    .faq{border-bottom:1px solid rgba(26,26,46,.1)}
+    .faq-q{padding:24px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .faq-q h4{font-size:17px}
+    .faq-arr{font-size:20px;color:var(--coral);transition:transform .2s;flex-shrink:0}
+    .faq.open .faq-arr{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .faq.open .faq-a{max-height:300px}
+    .faq-a p{padding-bottom:24px;font-size:16px;line-height:1.7;color:var(--body)}
+
+    /* ═══ CTA ═══ */
+    .cta-form{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap}
+    .cta-input{flex:1;min-width:200px;font-family:'DM Sans',sans-serif;font-size:15px;padding:14px 20px;border:1.5px solid rgba(26,26,46,.2);background:var(--white);color:var(--navy);border-radius:2px;outline:none}
+    .cta-input:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(232,96,76,.25)}
+
+    /* FOOTER */
+    footer{background:var(--navy);padding:80px 0 40px}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .ft-brand p{margin-top:16px;font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;max-width:260px}
+    .ft-tag{margin-top:20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;color:var(--coral)}
+    .ft-col h4{font-family:'DM Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px}
+    .ft-col ul{list-style:none}.ft-col li{margin-bottom:12px}
+    .ft-col a{font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s}
+    .ft-col a:hover{color:var(--white)}
+    .ft-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .ft-bot p{font-size:13px;color:rgba(255,255,255,.55)}
+    .ft-fdn{font-size:13px;color:rgba(255,255,255,.55)}.ft-fdn span{color:var(--coral)}
+    @media(max-width:768px){.ft-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.ft-grid{grid-template-columns:1fr}}
+
+    .fu{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease}
+    .fu.vis{opacity:1;transform:translateY(0)}.fu-1{transition-delay:.15s}.fu-2{transition-delay:.3s}
+
+    .btn:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* ── GHL Form Components ── */
+    .rs-form-container{max-width:520px;margin:0 auto;padding:0 20px}
+    .rs-form-card{background:var(--white,#FFFFFF);border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(11,29,58,.08)}
+    .rs-form-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--coral,#E8604C);margin-bottom:12px}
+    .rs-form-title{font-family:'Clash Display',sans-serif;font-size:28px;font-weight:700;line-height:1.2;color:var(--navy,#1A1A2E);margin-bottom:8px}
+    .rs-form-subtitle{font-size:15px;color:#6B7280;margin-bottom:28px}
+    .rs-deposit-note{background:rgba(232,96,76,.06);border-left:3px solid var(--coral,#E8604C);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:var(--navy,#1A1A2E);margin-bottom:24px}
+    .rs-deposit-note strong{font-weight:700}
+    .rs-field{margin-bottom:20px}
+    .rs-label{display:block;font-size:13px;font-weight:600;color:var(--navy,#1A1A2E);margin-bottom:6px}
+    .rs-input,.rs-select,.rs-textarea{width:100%;padding:12px 14px;font-size:15px;font-family:'DM Sans',sans-serif;border:1.5px solid #D1D5DB;border-radius:8px;background:#fff;color:var(--navy,#1A1A2E);transition:border-color .2s}
+    .rs-input:focus,.rs-select:focus,.rs-textarea:focus{outline:none;border-color:var(--coral,#E8604C);box-shadow:0 0 0 3px rgba(232,96,76,.25)}
+    .rs-input::placeholder,.rs-textarea::placeholder{color:#9CA3AF}
+    .rs-textarea{resize:vertical;min-height:80px}
+    .rs-radio-group{display:flex;gap:12px;flex-wrap:wrap}
+    .rs-radio-label{display:flex;align-items:center;gap:8px;padding:10px 16px;border:1.5px solid #D1D5DB;border-radius:8px;cursor:pointer;font-size:14px;transition:border-color .2s,background .2s}
+    .rs-radio-label:has(input:checked){border-color:var(--coral,#E8604C);background:rgba(232,96,76,.06)}
+    .rs-radio-label input{accent-color:var(--coral,#E8604C)}
+    .rs-btn{width:100%;padding:14px;font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;color:#fff;background:var(--coral,#E8604C);border:none;border-radius:8px;cursor:pointer;transition:background .2s;margin-top:8px}
+    .rs-btn:hover{background:#d4503f}
+    .rs-btn:disabled{opacity:.6;cursor:not-allowed}
+    .rs-success{display:none;text-align:center;padding:32px 0}
+    .rs-success-icon{width:56px;height:56px;background:#059669;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
+    .rs-success-icon svg{width:28px;height:28px;fill:#fff}
+    .rs-success h3{font-family:'Clash Display',sans-serif;font-size:22px;color:var(--navy,#1A1A2E);margin-bottom:8px}
+    .rs-success p{font-size:14px;color:#6B7280}
+    .rs-error-msg{display:none;background:#FEF2F2;border:1px solid #FECACA;color:#DC2626;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px}
+    .rs-footer-form{text-align:center;margin-top:16px;font-size:12px;color:#6B7280}
+
+    /* ── Newsletter Signup (GHL) ── */
+    .rs-inline-card{background:var(--navy,#1A1A2E);border-radius:12px;padding:32px 28px;text-align:center}
+    .rs-inline-title{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:6px}
+    .rs-inline-sub{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:20px}
+    .rs-inline-row{display:flex;gap:8px}
+    .rs-inline-input{flex:1;padding:12px 14px;font-size:15px;font-family:'DM Sans',sans-serif;border:1.5px solid rgba(255,255,255,.2);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;transition:border-color .2s}
+    .rs-inline-input:focus{outline:none;border-color:var(--coral,#E8604C);box-shadow:0 0 0 3px rgba(232,96,76,.25)}
+    .rs-inline-input::placeholder{color:rgba(255,255,255,.4)}
+    .rs-inline-btn{padding:12px 24px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;color:#fff;background:var(--coral,#E8604C);border:none;border-radius:8px;cursor:pointer;transition:background .2s;white-space:nowrap}
+    .rs-inline-btn:hover{background:#d4503f}
+    .rs-inline-btn:disabled{opacity:.6;cursor:not-allowed}
+    .rs-inline-success{display:none;color:#fff;font-size:15px;padding:8px 0}
+    .rs-inline-success strong{color:var(--coral,#E8604C)}
+    .rs-inline-error{display:none;color:#FCA5A5;font-size:13px;margin-top:8px}
+    .rs-inline-footer{font-size:11px;color:rgba(255,255,255,.4);margin-top:12px}
+
+  </style>
+  <meta property="og:title" content="reSpace - Own in the neighborhood you want." />
+  <meta property="og:description" content="Co-homeownership starting at $118,750. Private suite, shared spaces, in-house financing. Seattle." />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"reSpace","url":"https://respace.co"}</script>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-in">
+    <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
+    <ul class="nav-lk">
+      <li><a href="/buyers">Own</a></li>
+      <li><a href="/#props">Properties</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="/property-owners">For Owners</a></li>
+      <li><a href="/brokers">Brokers</a></li>
+    </ul>
+    <div class="nav-ct"><a href="#start" class="btn btn--c btn--sm">Find Your Space</a></div>
+    <button class="ham" aria-label="Open navigation menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('mob').classList.toggle('open').toString())" type="button"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <button class="mob-x" aria-label="Close navigation menu" onclick="document.getElementById('mob').classList.remove('open')" type="button">&times;</button>
+  <a href="/buyers">Own</a><a href="/#props">Properties</a><a href="#how">How It Works</a>
+  <a href="/property-owners">For Owners</a><a href="/brokers">Brokers</a>
+  <a href="#start" class="btn btn--c" onclick="document.getElementById('mob').classList.remove('open')">Find Your Space</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO: Identity-shifting. "You belong here."
+     ICP: 28-45 y/o, $65K-$120K, priced out
+═══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="gh" style="bottom:-40px;right:-60px;font-size:clamp(120px,18vw,260px);color:rgba(255,255,255,.04)">reSpace</div>
+  <div class="hero-c">
+    <span class="lbl lbl--lt">The new way to own.</span>
+    <h1>You already pay enough to own. <em>Now own what you pay for.</em></h1>
+    <p class="hero-sub fu">reSpace makes homeownership in premier Seattle neighborhoods accessible through structured co-homeownership. Private suites with shared living spaces, individual ownership, and real wealth-building. Homes starting at $118,750.</p>
+    <div class="hero-act fu fu-1">
+      <a href="#suites" class="btn btn--c">See Properties</a>
+      <a href="#how" class="btn btn--ow">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WEALTH GAP: Pain-agitation per Brett.
+     "Put a number on the pain of renting."
+═══════════════════════════════════════════ -->
+<section id="gap">
+  <div class="gh" style="top:-20px;left:-40px;font-size:clamp(100px,15vw,200px);color:rgba(255,255,255,.03)">re</div>
+  <div class="ctr">
+    <div class="gap-in">
+      <span class="lbl lbl--lt">The wealth gap is real</span>
+      <h2>Here is what your rent is <em>really</em> costing you.</h2>
+      <p>Every month you rent, you fund someone else's future. You already pay enough to own. The system just never gave you a path.</p>
+      <div class="gap-row">
+        <div class="gap-cell fu">
+          <div class="gap-val">$2,395</div>
+          <div class="gap-lbl">Average one-bedroom rent in Seattle. Every month. Gone.</div>
+        </div>
+        <div class="gap-cell fu fu-1">
+          <div class="gap-val">$287K</div>
+          <div class="gap-lbl">Total rent paid over 10 years. Zero ownership. Zero appreciation retained.</div>
+        </div>
+        <div class="gap-cell fu fu-2">
+          <div class="gap-val">$0</div>
+          <div class="gap-lbl">Wealth built from renting. Your landlord builds wealth. You do not.</div>
+        </div>
+      </div>
+      <p>Your rent could be building ownership. With reSpace, the same monthly payment builds real ownership in a real neighborhood.</p>
+      <a href="#suites" class="btn btn--c" style="margin-top:16px">See what ownership looks like</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WHAT YOU GET: Concrete per ICP.
+     "wet bar" never "kitchen" for suite amenities
+═══════════════════════════════════════════ -->
+<section class="sec" style="background:var(--sand)">
+  <div class="gh" style="bottom:-60px;right:-80px;font-size:clamp(80px,12vw,160px);color:rgba(26,26,46,.04)">Own the neighborhood.</div>
+  <div class="ctr">
+    <div class="split">
+      <div class="fu">
+        <span class="lbl">What you get</span>
+        <h2>Your private suite. Your community. <em>Your neighborhood.</em></h2>
+        <div class="cr"></div>
+        <ul class="feat-list">
+          <li class="feat-li"><div class="feat-dot"></div><div class="feat-txt">Private suite with ensuite bath and walk-in closet</div></li>
+          <li class="feat-li"><div class="feat-dot"></div><div class="feat-txt">Private washer/dryer in your suite</div></li>
+          <li class="feat-li"><div class="feat-dot"></div><div class="feat-txt">Wet bar or coffee station for everyday convenience</div></li>
+          <li class="feat-li"><div class="feat-dot"></div><div class="feat-txt">Sitting area and dedicated workspace</div></li>
+          <li class="feat-li"><div class="feat-dot"></div><div class="feat-txt">Shared kitchen, living room, and outdoor spaces</div></li>
+          <li class="feat-li"><div class="feat-dot"></div><div class="feat-txt">All-inclusive monthly costs comparable to renting a one-bedroom</div></li>
+          <li class="feat-li"><div class="feat-dot"></div><div class="feat-txt">Individual ownership via membership interest in a single-purpose LLC</div></li>
+          <li class="feat-li"><div class="feat-dot"></div><div class="feat-txt">In-house financing available for non-traditional earners</div></li>
+        </ul>
+      </div>
+      <div class="fu fu-1" style="height:480px">
+        <div class="img-ph" style="height:100%">
+          
+          <span>Suite Interior Photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     THE LESCHI COLLECTION: Proof this is real.
+     Suite names and pricing from brand bible.
+═══════════════════════════════════════════ -->
+<section id="suites" class="sec" style="background:var(--white)">
+  <div class="ctr">
+    <div style="text-align:center;margin-bottom:56px" class="fu">
+      <span class="lbl">The Leschi Collection</span>
+      <h2>Six suites. One community. <em>Your neighborhood.</em></h2>
+      <p style="max-width:600px;margin:16px auto 0;font-size:17px;line-height:1.7">Premier Seattle neighborhood. Lake Washington views. Each suite is a private home within a shared home. Ownership, not renting.</p>
+    </div>
+    <div class="suite-grid fu">
+      <div class="suite">
+        <div class="suite-nm">The Outlook A</div>
+        <div class="suite-pr">$118,750</div>
+        <div class="suite-desc">Third floor. Elevated sightlines and natural light. Can be combined with Outlook B for $237,500.</div>
+      </div>
+      <div class="suite">
+        <div class="suite-nm">The Outlook B</div>
+        <div class="suite-pr">$118,750</div>
+        <div class="suite-desc">Third floor. Private orientation and quiet positioning. Can be combined with Outlook A for $237,500.</div>
+      </div>
+      <div class="suite">
+        <div class="suite-nm">The Conservatory</div>
+        <div class="suite-pr">$159,500</div>
+        <div class="suite-desc">Main floor. Warm, grounded, and connected to the shared living spaces.</div>
+      </div>
+      <div class="suite">
+        <div class="suite-nm">The Gable</div>
+        <div class="suite-pr">$187,500</div>
+        <div class="suite-desc">Second floor. Character, light, and the feel of a home within a home.</div>
+      </div>
+      <div class="suite">
+        <div class="suite-nm">The Promenade</div>
+        <div class="suite-pr">$249,000</div>
+        <div class="suite-desc">Second floor. Generous layout with neighborhood views.</div>
+      </div>
+      <div class="suite">
+        <div class="suite-nm">The Atelier</div>
+        <div class="suite-pr">$249,000</div>
+        <div class="suite-desc">Lower level. The flagship. The largest suite in the collection.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="fu">
+      <p style="font-size:15px;margin-bottom:8px">Comparable one-bedroom rental in the area: approximately $2,395/month.</p>
+      <p style="font-size:15px;margin-bottom:24px;color:var(--coral);font-weight:600">Hold Your Space: $250 fully refundable deposit.</p>
+      <a href="#start" class="btn btn--c">Hold Your Space</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS: The Story, not the manual.
+     Seven steps. Buyer-specific detail.
+═══════════════════════════════════════════ -->
+<section id="how" style="background:var(--navy);padding:120px 0;position:relative;overflow:hidden">
+  <div class="gh" style="top:50%;left:-60px;transform:translateY(-50%);font-size:clamp(120px,18vw,240px);color:rgba(255,255,255,.025)">re</div>
+  <div class="ctr">
+    <div style="margin-bottom:64px" class="fu">
+      <span class="lbl lbl--lt">The process</span>
+      <h2 style="color:var(--white)">Seven steps to owning your home.</h2>
+    </div>
+    <div class="steps" id="steps">
+      <div class="step active" onclick="act(this)">
+        <div class="step-no">01</div>
+        <div class="step-t">Find your property</div>
+        <div class="step-d">Not the neighborhood you can afford. The one you actually want. Browse our current properties in Leschi and beyond.</div>
+      </div>
+      <div class="step" onclick="act(this)">
+        <div class="step-no">02</div>
+        <div class="step-t">Apply</div>
+        <div class="step-d">Submit your application. We review your financials, goals, and timeline. No W-2 required. Self-employed? Gig worker? You are welcome here.</div>
+      </div>
+      <div class="step" onclick="act(this)">
+        <div class="step-no">03</div>
+        <div class="step-t">Get financed</div>
+        <div class="step-d">Our in-house financing team works with you directly. Approval in 7 to 10 days. Conventional mortgage rejected? That is not the end of the conversation. It is the beginning of ours.</div>
+      </div>
+      <div class="step" onclick="act(this)">
+        <div class="step-no">04</div>
+        <div class="step-t">Form your group</div>
+        <div class="step-d">Bring your people or we help you find them. Each co-owner reserves a membership interest with exclusive-use rights to their private suite.</div>
+      </div>
+      <div class="step" onclick="act(this)">
+        <div class="step-no">05</div>
+        <div class="step-t">Close</div>
+        <div class="step-d">We handle the legal structure. The single-purpose LLC, the operating agreement, the terms. You sign. You get the keys. The property is owned by an LLC of which you are a member.</div>
+      </div>
+      <div class="step" onclick="act(this)">
+        <div class="step-no">06</div>
+        <div class="step-t">Move in</div>
+        <div class="step-d">Your suite is yours. The common spaces are shared. The neighborhood is home. You are no longer renting. This is the day everything changes.</div>
+      </div>
+      <div class="step" onclick="act(this)">
+        <div class="step-no">07</div>
+        <div class="step-t">Own your future</div>
+        <div class="step-d">Full appreciation retained as the property grows in value. Your membership interest can be sold with right-of-first-refusal for your co-owners. This is ownership, not a lease with extra steps.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FINANCING: The Unlock.
+     ICP pain point: denied by conventional lenders.
+═══════════════════════════════════════════ -->
+<section class="sec" style="background:var(--sand)">
+  <div class="ctr">
+    <div class="split">
+      <div class="fu">
+        <span class="lbl">In-house financing</span>
+        <h2>Built for how you <em>actually</em> work.</h2>
+        <div class="cr"></div>
+        <p style="line-height:1.75;margin-bottom:20px">Conventional lenders were not built for today's workforce. We were. Our financing is designed for gig workers, freelancers, entrepreneurs, and anyone whose income does not fit a neat W-2 box.</p>
+        <p style="line-height:1.75;margin-bottom:24px">You qualify when conventional lenders turn you away.</p>
+        <a href="#start" class="btn btn--n">Check if you qualify</a>
+      </div>
+      <div class="fin-card fu fu-1">
+        <h3>You qualify when other lenders have turned you away:</h3>
+        <ul class="fin-list">
+          <li class="fin-li"><div class="fin-dot"></div><div class="fin-txt"><strong>Self-employed for 6+ months</strong> with documented income</div></li>
+          <li class="fin-li"><div class="fin-dot"></div><div class="fin-txt"><strong>Gig workers</strong> with consistent 1099 history</div></li>
+          <li class="fin-li"><div class="fin-dot"></div><div class="fin-txt"><strong>Multiple income streams</strong> that banks refuse to count</div></li>
+          <li class="fin-li"><div class="fin-dot"></div><div class="fin-txt"><strong>Remote workers</strong> relocating to Seattle</div></li>
+          <li class="fin-li"><div class="fin-dot"></div><div class="fin-txt"><strong>Credit score 620+</strong> with consistent income</div></li>
+        </ul>
+        <div class="fin-stats">
+          <div><div class="fst-v">7-10</div><div class="fst-l">Days to approval</div></div>
+          <div><div class="fst-v">3%</div><div class="fst-l">Buyer broker commission</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BUYER SEGMENTS: From ICP research.
+     Six segments identified in market analysis.
+═══════════════════════════════════════════ -->
+<section class="sec" style="background:var(--white)">
+  <div class="ctr">
+    <div style="text-align:center;margin-bottom:56px" class="fu">
+      <span class="lbl">Who this is for</span>
+      <h2>reSpace is built for you.</h2>
+    </div>
+    <div class="seg-grid">
+      <div class="seg fu">
+        
+        <h4>Remote professionals recalibrating</h4>
+        <p>You can work from anywhere. Now you can own where you choose to live.</p>
+      </div>
+      <div class="seg fu fu-1">
+        
+        <h4>Long-distance commuters</h4>
+        <p>You want stability in a premium neighborhood without the commute burden on your budget.</p>
+      </div>
+      <div class="seg fu fu-2">
+        
+        <h4>High-income renters sidelined by price</h4>
+        <p>You earn enough to own. Just not enough for a $750K home. reSpace changes that math.</p>
+      </div>
+      <div class="seg fu">
+        
+        <h4>Retirees downsizing intelligently</h4>
+        <p>You want to own, not rent, in the community you choose for your next chapter.</p>
+      </div>
+      <div class="seg fu fu-1">
+        
+        <h4>Parents supporting adult children</h4>
+        <p>Help your kids into ownership alongside peer households. A path that did not exist before.</p>
+      </div>
+      <div class="seg fu fu-2">
+        
+        <h4>Owners wanting a second location</h4>
+        <p>Already own elsewhere. Want a structured, stable second home in a premier neighborhood.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FAQ: Honest answers. No hedging.
+     Voice: Confident, not corporate.
+═══════════════════════════════════════════ -->
+<section class="sec" style="background:var(--sand)">
+  <div class="ctr">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:48px" class="fu">
+        <span class="lbl">FAQ</span>
+        <h2>Honest answers to real questions.</h2>
+      </div>
+
+      <div class="faq fu" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button" aria-expanded="false">
+        <div class="faq-q"><h4>Do I actually own anything?</h4><span class="faq-arr">+</span></div>
+        <div class="faq-a"><p>Yes. You own a membership interest in a single-purpose LLC that owns the property. This is real property ownership with legal protections, governance rights, and full appreciation retained as the property grows in value. It is not a lease. It is not a share. It is ownership.</p></div>
+      </div>
+
+      <div class="faq fu" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button" aria-expanded="false">
+        <div class="faq-q"><h4>What if my co-owners are terrible?</h4><span class="faq-arr">+</span></div>
+        <div class="faq-a"><p>reSpace structures co-owner groups deliberately. The operating agreement includes governance rules, dispute resolution, and clear boundaries between private and shared spaces. Your suite is exclusively yours. Common areas have shared management. And if things do not work out, your membership interest can be sold independently.</p></div>
+      </div>
+
+      <div class="faq fu" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button" aria-expanded="false">
+        <div class="faq-q"><h4>Can I sell my interest?</h4><span class="faq-arr">+</span></div>
+        <div class="faq-a"><p>Yes. Your membership interest can be sold with right-of-first-refusal for your co-owners. You are never locked in. This is ownership with a clear exit path, not a commitment with no way out.</p></div>
+      </div>
+
+      <div class="faq fu" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button" aria-expanded="false">
+        <div class="faq-q"><h4>Is this a timeshare?</h4><span class="faq-arr">+</span></div>
+        <div class="faq-a"><p>No. Timeshares are usage rights tied to specific dates. This is real property ownership. You live in your suite full-time. You are a member of the LLC that owns the property. You retain full appreciation. The two models have nothing in common except the word "shared."</p></div>
+      </div>
+
+      <div class="faq fu" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button" aria-expanded="false">
+        <div class="faq-q"><h4>What about privacy?</h4><span class="faq-arr">+</span></div>
+        <div class="faq-a"><p>Your private suite is yours exclusively. Ensuite bath, walk-in closet, washer/dryer, wet bar, workspace. The shared spaces (kitchen, living room, outdoor areas) are communal by design. You get the privacy of your own home and the community of a neighborhood. That is the whole point.</p></div>
+      </div>
+
+      <div class="faq fu" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button" aria-expanded="false">
+        <div class="faq-q"><h4>What happens if a co-owner stops paying?</h4><span class="faq-arr">+</span></div>
+        <div class="faq-a"><p>Each co-owner has an individual membership interest and individual financing. If one co-owner defaults, their issue does not become yours. The LLC operating agreement has clear provisions for this scenario, including remediation steps and ultimately the ability to replace a non-performing member. Your ownership is protected.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CTA: "Create Your Space."
+     Buyer tagline: "Live Large. Pay Small."
+═══════════════════════════════════════════ -->
+<section id="start" class="sec" style="background:var(--white);text-align:center">
+  <div class="gh" style="bottom:-60px;right:-80px;font-size:clamp(80px,14vw,200px);color:rgba(26,26,46,.03)">Own the neighborhood.</div>
+  <div class="ctr">
+    <div class="fu" style="position:relative;z-index:1">
+      <span class="lbl">Ready?</span>
+      <h2>Hold Your Space.</h2>
+      <p style="margin:16px auto 8px;font-size:18px;max-width:500px;line-height:1.65">Secure your suite in the Leschi Collection.</p>
+      <p style="font-size:15px;color:var(--coral);font-weight:600;margin-bottom:32px">Live Large. Pay Small.</p>
+<div class="rs-form-container">
+  <div class="rs-form-card">
+    <div class="rs-form-badge">The Leschi Collection</div>
+    <h2 class="rs-form-title">Hold Your Space</h2>
+    <p class="rs-form-subtitle">Ready to move forward? Secure your suite in the Leschi Collection.</p>
+
+    <div class="rs-deposit-note">
+      <strong>$250 fully refundable Assessment Fee.</strong> This holds your preferred suite while we complete your personalized ownership overview. You can cancel at any time.
+    </div>
+
+    <div class="rs-error-msg" id="rsError"></div>
+
+    <form id="rsHoldForm">
+      <div class="rs-field">
+        <label class="rs-label" for="rsName">Full Name</label>
+        <input class="rs-input" type="text" id="rsName" name="name" placeholder="Your full name" required>
+      </div>
+
+      <div class="rs-field">
+        <label class="rs-label" for="rsEmail">Email</label>
+        <input class="rs-input" type="email" id="rsEmail" name="email" placeholder="you@email.com" required>
+      </div>
+
+      <div class="rs-field">
+        <label class="rs-label" for="rsPhone">Phone</label>
+        <input class="rs-input" type="tel" id="rsPhone" name="phone" placeholder="(206) 555-0100" required>
+      </div>
+
+      <div class="rs-field">
+        <label class="rs-label" for="rsSuite">Suite Preference</label>
+        <select class="rs-select" id="rsSuite" name="suite_preference" required>
+          <option value="" disabled selected>Select your suite</option>
+          <option value="The Conservatory — $189,500">The Conservatory — $189,500</option>
+          <option value="The Promenade — $197,500">The Promenade — $197,500</option>
+          <option value="The Outlook A — $197,500">The Outlook A — $197,500</option>
+          <option value="The Outlook B — $197,500">The Outlook B — $197,500</option>
+          <option value="The Gable — $124,500">The Gable — $124,500</option>
+          <option value="The Atelier — $249,000">The Atelier — $249,000</option>
+        </select>
+      </div>
+
+      <div class="rs-field">
+        <label class="rs-label" for="rsIncome">Household Income</label>
+        <select class="rs-select" id="rsIncome" name="household_income" required>
+          <option value="" disabled selected>Select range</option>
+          <option value="Under $50K">Under $50K</option>
+          <option value="$50K-$75K">$50K-$75K</option>
+          <option value="$75K-$100K">$75K-$100K</option>
+          <option value="$100K-$150K">$100K-$150K</option>
+          <option value="$150K+">$150K+</option>
+        </select>
+      </div>
+
+      <div class="rs-field">
+        <label class="rs-label" for="rsEmployment">Employment Type</label>
+        <select class="rs-select" id="rsEmployment" name="employment_type" required>
+          <option value="" disabled selected>Select type</option>
+          <option value="W-2 Employee">W-2 Employee</option>
+          <option value="Self-Employed">Self-Employed</option>
+          <option value="1099 Contractor">1099 Contractor</option>
+          <option value="Retired">Retired</option>
+          <option value="Student">Student</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="rs-field">
+        <label class="rs-label" for="rsTimeline">Move Timeline</label>
+        <select class="rs-select" id="rsTimeline" name="move_timeline" required>
+          <option value="" disabled selected>When are you looking to move?</option>
+          <option value="Immediately">Immediately</option>
+          <option value="1-3 Months">1-3 Months</option>
+          <option value="3-6 Months">3-6 Months</option>
+          <option value="6-12 Months">6-12 Months</option>
+          <option value="Just Exploring">Just Exploring</option>
+        </select>
+      </div>
+
+      <div class="rs-field">
+        <label class="rs-label" for="rsNeighborhood">Neighborhood Preference</label>
+        <input class="rs-input" type="text" id="rsNeighborhood" name="neighborhood_preference" placeholder="e.g. Leschi, Capitol Hill, Columbia City">
+      </div>
+
+      <div class="rs-field">
+        <label class="rs-label">Ready to hold your space?</label>
+        <div class="rs-radio-group">
+          <label class="rs-radio-label"><input type="radio" name="ready_to_hold" value="Yes — I'm ready" required> Yes, I'm ready</label>
+          <label class="rs-radio-label"><input type="radio" name="ready_to_hold" value="I have questions first"> I have questions first</label>
+        </div>
+      </div>
+
+      <button class="rs-btn" type="submit" id="rsSubmitBtn">Hold Your Space — $250</button>
+    </form>
+
+    <div class="rs-success" id="rsSuccess">
+      <div class="rs-success-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+      <h3>Your space is being held.</h3>
+      <p>You'll receive an email with next steps and a secure link to complete your $250 fully refundable Assessment Fee via Stripe.</p>
+    </div>
+  </div>
+  <p class="rs-footer">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section style="background:var(--navy,#1A1A2E);padding:80px 0;text-align:center;position:relative;overflow:hidden">
+  <div class="ctr" style="position:relative;z-index:1">
+    <div style="max-width:480px;margin:0 auto">
+      <h3 class="rs-inline-title">The Ownership Brief</h3>
+      <p class="rs-inline-sub">The housing market is changing. Stay ahead of it.</p>
+      <form id="rsNewsForm">
+        <div class="rs-inline-row">
+          <label for="rsNewsEmail" class="sr-only">Email address</label><input class="rs-inline-input" type="email" id="rsNewsEmail" name="email" placeholder="Your email" required>
+          <button class="rs-inline-btn" type="submit" id="rsNewsBtn">Subscribe</button>
+        </div>
+      </form>
+      <div class="rs-inline-success" id="rsNewsSuccess"><strong>You're in.</strong> Watch your inbox.</div>
+      <div class="rs-inline-error" id="rsNewsError"></div>
+      <p class="rs-inline-footer">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ctr">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
+        <p>Co-homeownership for people who refuse to rent their whole lives.</p>
+        <div class="ft-tag">The new way to own.</div>
+      </div>
+      <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#how">How It Works</a></li><li><a href="/#props">Properties</a></li><li><a href="#">Blog</a></li></ul></div>
+      <div class="ft-col"><h4>For You</h4><ul><li><a href="/buyers">Buyers</a></li><li><a href="/property-owners">Property Owners</a></li><li><a href="/brokers">Brokers</a></li><li><a href="#">The Foundation</a></li></ul></div>
+      <div class="ft-col"><h4>Connect</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">YouTube</a></li><li><a href="mailto:hello@respace.co">hello@respace.co</a></li></ul></div>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 reSpace. All rights reserved.</p>
+      <div class="ft-fdn"><span>1%</span> of every property sale goes to The reSpace Foundation</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
+window.addEventListener('load',()=>{document.getElementById('hero-bg').classList.add('loaded')});
+function act(el){document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));el.classList.add('active')}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+// Hold Your Space — GHL
+(function(){
+  var GHL_API='https://services.leadconnectorhq.com/contacts/',GHL_KEY='pit-5ed1e3eb-7575-42b6-afa6-39b746fa0d14',GHL_LOC='Pg5fHv12BxlpwrUiHfJ6';
+  var form=document.getElementById('rsHoldForm');if(!form)return;
+  var btn=document.getElementById('rsSubmitBtn'),err=document.getElementById('rsError'),ok=document.getElementById('rsSuccess');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();err.style.display='none';btn.disabled=true;btn.textContent='Submitting…';
+    var d=Object.fromEntries(new FormData(form)),np=(d.name||'').trim().split(/\s+/);
+    fetch(GHL_API,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+GHL_KEY,'Version':'2021-07-28'},body:JSON.stringify({locationId:GHL_LOC,firstName:np[0]||'',lastName:np.slice(1).join(' ')||'',email:d.email,phone:d.phone,tags:['hold-your-space','buyer-lead','leschi-collection'],source:'hold-your-space',customFields:[{id:'ZMmKuQwx7Oy9dPnqrpay',value:d.suite_preference||''},{id:'H9RrClogVW5VnavkGaMB',value:d.household_income||''},{id:'XwwoXJguVpqUpY7fPAVc',value:d.employment_type||''},{id:'r1IwvAeisyW7VDAUCjCY',value:d.move_timeline||''},{id:'E8j7LQeeZuXuLeuuupfi',value:d.neighborhood_preference||''}]})})
+    .then(function(r){if(!r.ok)throw new Error('f');form.style.display='none';ok.style.display='block';})
+    .catch(function(){err.textContent='Something went wrong. Please try again or email hello@respace.co.';err.style.display='block';btn.disabled=false;btn.textContent='Hold Your Space — $250';});
+  });
+})();
+
+// Newsletter — GHL
+(function(){
+  var nf=document.getElementById('rsNewsForm');if(!nf)return;
+  nf.addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('rsNewsError').style.display='none';
+    var nb=document.getElementById('rsNewsBtn');nb.disabled=true;nb.textContent='Subscribing…';
+    fetch('https://services.leadconnectorhq.com/contacts/',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer pit-5ed1e3eb-7575-42b6-afa6-39b746fa0d14','Version':'2021-07-28'},body:JSON.stringify({locationId:'Pg5fHv12BxlpwrUiHfJ6',email:document.getElementById('rsNewsEmail').value,tags:['newsletter-subscriber'],source:'newsletter-signup'})})
+    .then(function(r){if(!r.ok)throw new Error('f');nf.style.display='none';document.getElementById('rsNewsSuccess').style.display='block';})
+    .catch(function(){document.getElementById('rsNewsError').textContent='Something went wrong. Try again.';document.getElementById('rsNewsError').style.display='block';nb.disabled=false;nb.textContent='Subscribe';});
+  });
+})();
+});
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I actually own anything?","acceptedAnswer":{"@type":"Answer","text":"Yes. You own a membership interest in a single-purpose LLC that owns the property. This is real property ownership with legal protections, governance rights, and full appreciation retained."}},{"@type":"Question","name":"Can I sell my interest?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your membership interest can be sold with right-of-first-refusal for your co-owners. You are never locked in."}},{"@type":"Question","name":"Is this a timeshare?","acceptedAnswer":{"@type":"Answer","text":"No. Timeshares are usage rights tied to specific dates. This is real property ownership. You live in your suite full-time as a member of the LLC that owns the property."}},{"@type":"Question","name":"What about privacy?","acceptedAnswer":{"@type":"Answer","text":"Your private suite is yours exclusively with ensuite bath, walk-in closet, washer/dryer, and wet bar. Shared spaces like kitchen, living room, and outdoor areas are communal."}},{"@type":"Question","name":"What happens if a co-owner stops paying?","acceptedAnswer":{"@type":"Answer","text":"Each co-owner has individual financing. If one defaults, their issue does not become yours. The LLC operating agreement has clear provisions for this scenario."}}]}</script>
+</body>
+</html>

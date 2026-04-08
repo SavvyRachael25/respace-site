@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>reSpace - The Ownership Conversation</title>
+  <meta name="description" content="Blog posts, co-owner stories, press coverage, podcast episodes, and events from reSpace. The ownership conversation starts here." />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#1A1A2E;--coral:#E8604C;--sand:#F5EFE6;--white:#FFFFFF;--sage:#7C9A7E;--body:#444444}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-weight:400;font-size:17px;color:var(--body);background:var(--white);overflow-x:hidden;line-height:1.6}
+    h1,h2,h3{font-family:'Clash Display',sans-serif;color:var(--navy);letter-spacing:-0.02em}
+    h1{font-weight:700;font-size:clamp(48px,7vw,88px);line-height:0.95}
+    h2{font-weight:600;font-size:clamp(32px,4.5vw,56px);line-height:1.0;letter-spacing:-0.01em}
+    h3{font-weight:600;font-size:clamp(20px,2.5vw,30px);line-height:1.15}
+    h4{font-family:'DM Sans',sans-serif;font-weight:700;font-size:18px;color:var(--navy)}
+    em{font-style:normal;color:var(--coral)}
+    .ctr{max-width:1200px;margin:0 auto;padding:0 32px}
+    @media(max-width:768px){.ctr{padding:0 20px}}
+    .sec{padding:120px 0;position:relative;overflow:hidden}
+    .lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:12px}
+    .lbl--lt{color:var(--white)}
+    .cr{width:48px;height:3px;background:var(--coral);margin:24px 0}
+    .gh{position:absolute;font-family:'Clash Display',sans-serif;font-weight:700;pointer-events:none;user-select:none;line-height:1;white-space:nowrap}
+    .wm{font-family:'DM Sans',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.02em;text-decoration:none;display:inline-flex;align-items:baseline}
+    .wm .re{color:var(--coral)}.wm .sp{color:var(--navy)}.wm--lt .sp{color:var(--white)}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;padding:14px 28px;border-radius:2px;transition:transform .15s,box-shadow .15s,background .15s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn--c{background:var(--coral);color:var(--white)}.btn--c:hover{background:#d4503f;box-shadow:0 4px 20px rgba(232,96,76,.35)}
+    .btn--n{background:var(--navy);color:var(--white)}.btn--n:hover{background:#0f0f1e}
+    .btn--on{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}.btn--on:hover{background:var(--navy);color:var(--white)}
+    .btn--sm{padding:10px 20px;font-size:14px}
+
+    /* Nav */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,46,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .3s,box-shadow .3s}
+    nav.scrolled{background:rgba(26,26,46,.97);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto;padding:0 32px}
+    .nav-lk{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-lk a{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);opacity:.9;text-decoration:none;transition:opacity .15s}
+    .nav-lk a:hover{opacity:1}
+    .nav-ct{display:flex;align-items:center;gap:12px}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .ham span{display:block;width:22px;height:2px;background:var(--white)}
+    @media(max-width:960px){.nav-lk,.nav-ct{display:none}.ham{display:flex}}
+    .mob{display:none;position:fixed;inset:0;background:var(--navy);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+    .mob.open{display:flex}
+    .mob a{font-family:'Clash Display',sans-serif;font-weight:600;font-size:28px;color:var(--white);text-decoration:none}
+    .mob a:hover{color:var(--coral)}
+    .mob-x{position:absolute;top:24px;right:32px;font-size:28px;color:var(--white);cursor:pointer;background:none;border:none}
+
+    /* Hero */
+    .media-hero{background:var(--navy);padding:160px 0 80px;position:relative;overflow:hidden;margin-bottom:-1px}
+    .media-hero h1{color:var(--white)}
+
+    /* Filter tabs */
+    .filters{display:flex;gap:8px;margin-bottom:48px;flex-wrap:wrap}
+    .filter-btn{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;padding:8px 20px;border-radius:100px;border:1.5px solid rgba(26,26,46,.15);background:transparent;color:var(--body);cursor:pointer;transition:all .15s}
+    .filter-btn:hover{border-color:var(--coral);color:var(--coral)}
+    .filter-btn.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+
+    /* Featured card */
+    .featured{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid rgba(26,26,46,.08)}
+    .featured-img{height:400px;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,#e0d8cc,#ccc4b8);display:flex;align-items:center;justify-content:center}
+    .featured-img span{font-family:'DM Sans',sans-serif;font-size:12px;color:#999;letter-spacing:.08em;text-transform:uppercase}
+    .featured-meta{font-size:13px;color:var(--coral);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+    .featured h3{font-size:clamp(24px,3vw,36px);margin-bottom:16px}
+    .featured p{line-height:1.7;margin-bottom:24px;color:var(--body)}
+    .featured a{font-weight:700;color:var(--coral);text-decoration:none;font-size:15px}
+    @media(max-width:900px){.featured{grid-template-columns:1fr}.featured-img{height:280px}}
+
+    /* Article grid */
+    .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    @media(max-width:900px){.article-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.article-grid{grid-template-columns:1fr}}
+    .article-card{border-radius:4px;overflow:hidden;transition:transform .2s,box-shadow .2s;text-decoration:none;display:block}
+    .article-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(26,26,46,.1)}
+    .article-img{height:200px;background:linear-gradient(135deg,#e0d8cc,#ccc4b8);display:flex;align-items:center;justify-content:center}
+    .article-img span{font-family:'DM Sans',sans-serif;font-size:11px;color:#999;letter-spacing:.08em;text-transform:uppercase}
+    .article-body{padding:24px 0}
+    .article-cat{font-size:12px;color:var(--coral);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+    .article-body h4{margin-bottom:8px;line-height:1.3}
+    .article-body p{font-size:15px;color:var(--body);line-height:1.55}
+    .article-date{font-size:13px;color:#999;margin-top:12px}
+
+    /* Newsletter strip */
+    .newsletter{background:var(--navy);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+    .newsletter h2{color:var(--white);margin-bottom:16px}
+    .newsletter p{color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 32px;font-size:17px;line-height:1.7}
+    .nl-form{display:flex;gap:12px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+    .nl-input{flex:1;min-width:200px;padding:14px 20px;font-family:'DM Sans',sans-serif;font-size:15px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.03);color:var(--white);border-radius:2px}
+    .nl-input::placeholder{color:rgba(255,255,255,.4)}
+    .nl-input:focus{outline:none;border-color:var(--coral);box-shadow:0 0 0 3px rgba(232,96,76,.25)}
+
+    /* Footer */
+    footer{background:var(--navy);padding:80px 0 40px}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .ft-brand p{margin-top:16px;font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;max-width:260px}
+    .ft-tag{margin-top:20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;color:var(--coral)}
+    .ft-col h4{font-family:'DM Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px}
+    .ft-col ul{list-style:none}.ft-col li{margin-bottom:12px}
+    .ft-col a{font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s}
+    .ft-col a:hover{color:var(--white)}
+    .ft-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .ft-bot p{font-size:13px;color:rgba(255,255,255,.55)}
+    .ft-fdn{font-size:13px;color:rgba(255,255,255,.55)}.ft-fdn span{color:var(--coral)}
+    @media(max-width:768px){.ft-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.ft-grid{grid-template-columns:1fr}}
+
+    .fu{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease}
+    .fu.vis{opacity:1;transform:translateY(0)}.fu-1{transition-delay:.15s}.fu-2{transition-delay:.3s}
+
+    .btn:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+  <meta property="og:title" content="reSpace - The Ownership Conversation" />
+  <meta property="og:description" content="Blog, press, co-owner stories, podcast, and events from reSpace." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"reSpace","url":"https://respace.co"}</script>
+</head>
+<body>
+
+<!-- Nav -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-in">
+    <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
+    <ul class="nav-lk">
+      <li><a href="/buyers">Own</a></li>
+      <li><a href="/#props">Properties</a></li>
+      <li><a href="/#how">How It Works</a></li>
+      <li><a href="/property-owners">For Owners</a></li>
+      <li><a href="/brokers">Brokers</a></li>
+    </ul>
+    <div class="nav-ct"><a href="/" class="btn btn--c btn--sm">Find Your Space</a></div>
+    <button class="ham" aria-label="Open navigation menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('mob').classList.toggle('open').toString())" type="button"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <button class="mob-x" aria-label="Close navigation menu" onclick="document.getElementById('mob').classList.remove('open')" type="button">&times;</button>
+  <a href="/buyers">Own</a><a href="/#props">Properties</a><a href="/#how">How It Works</a>
+  <a href="/property-owners">For Owners</a><a href="/brokers">Brokers</a>
+</div>
+
+<!-- Hero -->
+<section class="media-hero">
+  <div class="gh" style="bottom:-40px;right:-60px;font-size:clamp(100px,16vw,220px);color:rgba(255,255,255,.03)">reSpace</div>
+  <div class="ctr">
+    <span class="lbl lbl--lt">The ownership conversation.</span>
+    <h1>Stories. Research. <em>Movement.</em></h1>
+    <p style="margin-top:20px;max-width:540px;font-size:17px;line-height:1.7;color:rgba(255,255,255,.8)">Blog posts, co-owner stories, market analysis, press coverage, podcast episodes, and events. Everything reSpace is thinking, building, and proving.</p>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="sec" style="background:var(--white);padding-top:80px">
+  <div class="ctr">
+
+    <!-- Filters -->
+    <div class="filters fu">
+      <button class="filter-btn active" onclick="filterPosts('all',this)">All</button>
+      <button class="filter-btn" onclick="filterPosts('blog',this)">Blog</button>
+      <button class="filter-btn" onclick="filterPosts('stories',this)">Co-Owner Stories</button>
+      <button class="filter-btn" onclick="filterPosts('press',this)">Press</button>
+      <button class="filter-btn" onclick="filterPosts('podcast',this)">Podcast</button>
+      <button class="filter-btn" onclick="filterPosts('events',this)">Events</button>
+    </div>
+
+    <!-- Featured Article -->
+    <div class="featured fu">
+      <div class="featured-img"><span>Featured Article Image</span></div>
+      <div>
+        <div class="featured-meta">The Ownership Brief</div>
+        <h3>What is co-homeownership? The definitive guide for 2026.</h3>
+        <p>Everything you need to know about structured co-homeownership: what it is, how it works, what you own, how financing works, and why it matters for a generation priced out of traditional homeownership.</p>
+        <a href="#">Read the full guide &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Article Grid -->
+    <div class="article-grid">
+
+      <a href="#" class="article-card fu" data-cat="blog">
+        <div class="article-img"><span>Article Image</span></div>
+        <div class="article-body">
+          <div class="article-cat">Buy Together Build Wealth</div>
+          <h4>How does co-buying a home actually work?</h4>
+          <p>A step-by-step breakdown of the co-buying process, from finding your property to closing through a single-purpose LLC.</p>
+          <div class="article-date">Coming Soon</div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card fu fu-1" data-cat="blog">
+        <div class="article-img"><span>Article Image</span></div>
+        <div class="article-body">
+          <div class="article-cat">Housing Policy</div>
+          <h4>Co-living vs co-homeownership: what is the difference?</h4>
+          <p>They sound similar but they are fundamentally different models. One is renting. The other is owning. Here is why that matters.</p>
+          <div class="article-date">Coming Soon</div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card fu fu-2" data-cat="blog">
+        <div class="article-img"><span>Article Image</span></div>
+        <div class="article-body">
+          <div class="article-cat">The Ownership Brief</div>
+          <h4>How to buy a home with friends in Seattle.</h4>
+          <p>Practical guide to co-buying in the Seattle market. Neighborhoods, price points, legal structure, and financing options.</p>
+          <div class="article-date">Coming Soon</div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card fu" data-cat="stories">
+        <div class="article-img"><span>Co-Owner Portrait</span></div>
+        <div class="article-body">
+          <div class="article-cat">Co-Owner Story</div>
+          <h4>Coming soon: the first Leschi Collection co-owner stories.</h4>
+          <p>Real people. Real neighborhoods. Real ownership. These stories will be published as the Leschi Collection closes its first suites.</p>
+          <div class="article-date">Coming Soon</div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card fu fu-1" data-cat="blog">
+        <div class="article-img"><span>Article Image</span></div>
+        <div class="article-body">
+          <div class="article-cat">Buy Together Build Wealth</div>
+          <h4>Seattle affordable housing options in 2026: a complete guide.</h4>
+          <p>What are your real options if you earn $60K to $120K and want to own in Seattle? We break down every path, including co-homeownership.</p>
+          <div class="article-date">Coming Soon</div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card fu fu-2" data-cat="podcast">
+        <div class="article-img"><span>Podcast Episode</span></div>
+        <div class="article-body">
+          <div class="article-cat">Podcast</div>
+          <h4>Shoulders of Giants: conversations with the people rebuilding housing.</h4>
+          <p>The reSpace podcast series featuring founders, brokers, policy makers, and co-owners shaping the future of homeownership.</p>
+          <div class="article-date">Coming Soon</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="gh" style="bottom:-40px;right:-60px;font-size:clamp(80px,12vw,160px);color:rgba(255,255,255,.03)">Own the neighborhood.</div>
+  <div class="ctr" style="position:relative;z-index:1">
+    <span class="lbl lbl--lt">The Ownership Brief</span>
+    <h2>Stay in the conversation.</h2>
+    <p>Weekly insights on the housing market, co-homeownership, and the reSpace movement. Not a newsletter. A publication.</p>
+    <!-- GHL FORM: "Newsletter Signup" | Pipeline: Newsletter Subscriber -->
+    <div class="nl-form">
+      <form id="media-newsletter-form" style="display:flex;gap:10px;width:100%">
+        <label for="media-news-email" class="sr-only">Email address</label><input id="media-news-email" type="email" name="email" placeholder="Your email" required style="flex:1;padding:14px 16px;font-size:15px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;border-radius:2px;font-family:'DM Sans',sans-serif">
+        <button type="submit" class="btn btn--c" style="white-space:nowrap">Subscribe</button>
+      </form>
+      <div id="media-newsletter-success" style="display:none;color:#fff;font-size:15px;padding:8px 0"><strong style="color:var(--coral)">You're in.</strong> Watch your inbox.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="ctr">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
+        <p>Co-homeownership for people who refuse to rent their whole lives.</p>
+        <div class="ft-tag">The new way to own.</div>
+      </div>
+      <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="/#how">How It Works</a></li><li><a href="/#props">Properties</a></li><li><a href="/media">Media</a></li></ul></div>
+      <div class="ft-col"><h4>For You</h4><ul><li><a href="/buyers">Buyers</a></li><li><a href="/property-owners">Property Owners</a></li><li><a href="/brokers">Brokers</a></li><li><a href="#">The Foundation</a></li></ul></div>
+      <div class="ft-col"><h4>Connect</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">YouTube</a></li><li><a href="mailto:office@reSpace.co">office@reSpace.co</a></li></ul></div>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 reSpace. All rights reserved.</p>
+      <div class="ft-fdn"><span>1%</span> of every property sale goes to The reSpace Foundation</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
+
+function filterPosts(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.article-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+document.getElementById('media-newsletter-form').addEventListener('submit',function(e){
+  e.preventDefault();var form=e.target;var email=form.querySelector('input[name="email"]').value;
+  var payload={locationId:'Pg5fHv12BxlpwrUiHfJ6',email:email,tags:['newsletter-subscriber'],source:'respace-website-media'};
+  form.querySelector('button').disabled=true;form.querySelector('button').textContent='Subscribing...';
+  fetch('https://services.leadconnectorhq.com/contacts/',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer pit-5ed1e3eb-7575-42b6-afa6-39b746fa0d14','Version':'2021-07-28'},body:JSON.stringify(payload)})
+  .then(function(r){if(r.ok){form.style.display='none';document.getElementById('media-newsletter-success').style.display='block';}else{throw new Error('fail');}})
+  .catch(function(){form.querySelector('button').disabled=false;form.querySelector('button').textContent='Subscribe';});
+});
+</script>
+</body>
+</html>

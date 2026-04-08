@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrepreneurial Mashup | reSpace Events</title>
+  <meta name="description" content="Three members-only communities. One night. One room. EO Seattle, GSBA, and Columbia Tower Club converge on April 7th." />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="Entrepreneurial Mashup | reSpace Events" />
+  <meta property="og:description" content="Three members-only communities. One night. One room. EO Seattle, GSBA, and Columbia Tower Club converge on April 7th." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://respace.co/blog/three-communities-one-room-respace" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#1A1A2E;--coral:#E8604C;--sand:#F5EFE6;--white:#FFFFFF;--sage:#7C9A7E;--body:#444444}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-weight:400;font-size:17px;color:var(--body);background:var(--white);overflow-x:hidden;line-height:1.6}
+    h1,h2,h3,h4{font-family:'Clash Display',sans-serif;color:var(--navy);letter-spacing:-0.02em}
+    h1{font-weight:700;font-size:clamp(40px,6vw,72px);line-height:1.0}
+    h2{font-weight:600;font-size:clamp(26px,3.5vw,40px);line-height:1.1;letter-spacing:-0.01em}
+    h3{font-weight:600;font-size:clamp(20px,2.5vw,28px);line-height:1.2}
+    em{font-style:normal;color:var(--coral)}
+    .ctr{max-width:1200px;margin:0 auto;padding:0 32px}
+    @media(max-width:768px){.ctr{padding:0 20px}}
+    .lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:12px}
+    .lbl--lt{color:var(--white)}
+    .wm{font-family:'DM Sans',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.02em;text-decoration:none;display:inline-flex;align-items:baseline}
+    .wm .re{color:var(--coral)}.wm .sp{color:var(--navy)}.wm--lt .sp{color:var(--white)}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;padding:14px 28px;border-radius:2px;transition:transform .15s,box-shadow .15s,background .15s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn--c{background:var(--coral);color:var(--white)}.btn--c:hover{background:#d4503f;box-shadow:0 4px 20px rgba(232,96,76,.35)}
+    .btn--n{background:var(--navy);color:var(--white)}.btn--n:hover{background:#0f0f1e}
+    .btn--sm{padding:10px 20px;font-size:14px}
+    .btn:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Nav */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,46,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .3s,box-shadow .3s}
+    nav.scrolled{background:rgba(26,26,46,.97);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto;padding:0 32px}
+    .nav-lk{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-lk a{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);text-decoration:none;opacity:.9;transition:opacity .15s}
+    .nav-lk a:hover{opacity:1}
+    .nav-ct{display:flex;align-items:center;gap:12px}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .ham span{display:block;width:22px;height:2px;background:var(--white)}
+    @media(max-width:960px){.nav-lk,.nav-ct{display:none}.ham{display:flex}}
+    .mob{display:none;position:fixed;inset:0;background:var(--navy);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+    .mob.open{display:flex}
+    .mob a{font-family:'Clash Display',sans-serif;font-weight:600;font-size:28px;color:var(--white);text-decoration:none}
+    .mob a:hover{color:var(--coral)}
+    .mob-x{position:absolute;top:24px;right:32px;font-size:28px;color:var(--white);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif}
+
+    /* Footer */
+    footer{background:var(--navy);padding:80px 0 40px}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .ft-brand p{margin-top:16px;font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;max-width:260px}
+    .ft-tag{margin-top:20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;color:var(--coral)}
+    .ft-col h4{font-family:'DM Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px}
+    .ft-col ul{list-style:none}.ft-col li{margin-bottom:12px}
+    .ft-col a{font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s}
+    .ft-col a:hover{color:var(--white)}
+    .ft-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .ft-bot p{font-size:13px;color:rgba(255,255,255,.55)}
+    .ft-fdn{font-size:13px;color:rgba(255,255,255,.55)}.ft-fdn span{color:var(--coral)}
+    @media(max-width:768px){.ft-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.ft-grid{grid-template-columns:1fr}}
+
+    /* Blog hero */
+    .blog-hero{background:var(--navy);padding:140px 0 80px;position:relative;overflow:hidden}
+    .blog-hero h1{color:var(--white);margin-top:16px}
+    .blog-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:24px}
+    .blog-meta span{font-size:14px;color:rgba(255,255,255,.5)}
+    .blog-meta .sep{color:rgba(255,255,255,.2)}
+
+    /* Article body */
+    .article-wrap{background:var(--white);padding:80px 0}
+    .article-body{max-width:720px;margin:0 auto;font-size:18px;line-height:1.75;color:var(--body)}
+    .article-body p{margin-bottom:24px}
+    .article-body h2{font-size:clamp(22px,2.5vw,30px);margin:48px 0 16px;color:var(--navy)}
+    .article-body h3{font-size:clamp(19px,2vw,24px);margin:36px 0 12px;color:var(--navy)}
+    .article-body strong{color:var(--navy);font-weight:700}
+    .article-body ul{margin:16px 0 24px 20px}
+    .article-body li{margin-bottom:10px}
+    .article-body blockquote{border-left:3px solid var(--coral);padding:16px 24px;margin:32px 0;background:var(--sand);border-radius:0 4px 4px 0}
+    .article-body blockquote p{margin-bottom:0;font-size:17px;color:var(--navy);font-weight:600}
+    .article-img-ph{height:360px;background:linear-gradient(135deg,#e0d8cc,#ccc4b8);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:48px}
+    .article-img-ph span{font-family:'DM Sans',sans-serif;font-size:12px;color:#999;letter-spacing:.08em;text-transform:uppercase}
+    .event-detail-box{background:var(--sand);border-radius:4px;padding:32px;margin:32px 0}
+    .event-detail-box h3{font-size:20px;margin-bottom:16px}
+    .event-detail-row{display:flex;gap:16px;margin-bottom:10px;font-size:16px}
+    .event-detail-label{font-weight:700;color:var(--navy);min-width:60px}
+    .article-cta{background:var(--navy);border-radius:4px;padding:40px;text-align:center;margin:48px 0}
+    .article-cta p{color:rgba(255,255,255,.75);margin-bottom:20px;font-size:16px}
+
+    /* Related */
+    .related-sec{background:var(--sand);padding:80px 0}
+    .related-sec h2{margin-bottom:40px;font-size:clamp(24px,3vw,36px)}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    @media(max-width:768px){.related-grid{grid-template-columns:1fr}}
+    .related-card{background:var(--white);border-radius:4px;overflow:hidden;text-decoration:none;display:block;transition:transform .2s}
+    .related-card:hover{transform:translateY(-2px)}
+    .related-card-img{height:180px;background:linear-gradient(135deg,#e0d8cc,#ccc4b8);display:flex;align-items:center;justify-content:center}
+    .related-card-img span{font-size:11px;color:#999;letter-spacing:.08em;text-transform:uppercase;font-family:'DM Sans',sans-serif}
+    .related-card-body{padding:24px}
+    .related-card-cat{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;display:block}
+    .related-card-title{font-family:'Clash Display',sans-serif;font-weight:600;font-size:18px;color:var(--navy);line-height:1.2;margin-bottom:8px}
+    .related-card-meta{font-size:13px;color:rgba(26,26,46,.45)}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-in">
+    <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
+    <ul class="nav-lk">
+      <li><a href="/buyers">Own</a></li>
+      <li><a href="/#props">Properties</a></li>
+      <li><a href="/#how">How It Works</a></li>
+      <li><a href="/property-owners">For Owners</a></li>
+      <li><a href="/brokers">Brokers</a></li>
+    </ul>
+    <div class="nav-ct"><a href="/open-house" class="btn btn--c btn--sm">Find Your Space</a></div>
+    <button class="ham" aria-label="Open navigation menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('mob').classList.toggle('open').toString())" type="button"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <button class="mob-x" aria-label="Close navigation menu" onclick="document.getElementById('mob').classList.remove('open')" type="button">&times;</button>
+  <a href="/buyers" onclick="document.getElementById('mob').classList.remove('open')">Own</a>
+  <a href="/#props" onclick="document.getElementById('mob').classList.remove('open')">Properties</a>
+  <a href="/#how" onclick="document.getElementById('mob').classList.remove('open')">How It Works</a>
+  <a href="/property-owners" onclick="document.getElementById('mob').classList.remove('open')">For Owners</a>
+  <a href="/brokers" onclick="document.getElementById('mob').classList.remove('open')">Brokers</a>
+  <a href="/open-house" class="btn btn--c" onclick="document.getElementById('mob').classList.remove('open')">Find Your Space</a>
+</div>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="ctr">
+    <span class="lbl lbl--lt">reSpace News</span>
+    <h1>Entrepreneurial Mashup</h1>
+    <div class="blog-meta">
+      <span>reSpace Team</span>
+      <span class="sep">&middot;</span>
+      <span>Mar 23, 2026</span>
+      <span class="sep">&middot;</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<section class="article-wrap">
+  <div class="ctr">
+    <div class="article-body">
+
+      <div class="article-img-ph"><span>Event Image</span></div>
+
+      <p>Three members-only communities. One night. One room. EO Seattle, GSBA, and Columbia Tower Club are converging for a private evening of founders, CEOs, and decision-makers. No outside guests. Just the people building Seattle's future.</p>
+
+      <div class="event-detail-box">
+        <h3>Event Details</h3>
+        <div class="event-detail-row"><span class="event-detail-label">When</span><span>Tuesday, April 7, 2026</span></div>
+        <div class="event-detail-row"><span class="event-detail-label">Time</span><span>5:30 – 7:30 PM</span></div>
+        <div class="event-detail-row"><span class="event-detail-label">Where</span><span>Columbia Tower Club, 75th Floor</span></div>
+        <div class="event-detail-row"><span class="event-detail-label">Who</span><span>Members only. EO, GSBA, CTC.</span></div>
+      </div>
+
+      <h2>Who's in the Room</h2>
+
+      <p>170+ EO members. 1,300+ GSBA businesses. Seattle's executive network. These are private, members-only organizations. Each with their own powerhouse network of founders, operators, and business leaders. On April 7th, they converge for one night only.</p>
+
+      <h3>EO Seattle</h3>
+      <p>Peer learning. No sideline advice. The local chapter of the Entrepreneurs' Organization. A global peer-to-peer network of 14,000+ founders across 60+ countries. Just entrepreneurs learning from each other.</p>
+
+      <h3>GSBA</h3>
+      <p>Equality is good business. The largest LGBTQ+ and allied chamber of commerce in North America. Championing equity in the business community since 1981. Nearly 600 scholars funded.</p>
+
+      <h3>Columbia Tower Club</h3>
+      <p>75 floors above the city. Seattle's premier private club. A community built around connection and culture, with access to 19 premier city clubs nationwide.</p>
+
+      <h2>Why reSpace Is in This Room</h2>
+
+      <p>reSpace was built on the belief that people thrive when they share space intentionally. Community is not an afterthought. It is the foundation. We do not just build communities inside homes. We build relationships across the ecosystem that makes Seattle one of the most innovative cities in the country. The best partnerships do not happen in silos. They happen when the right people are finally in the same room. That is the power of structured connection.</p>
+
+      <blockquote><p>Be in the room. Members of EO Seattle, GSBA, and Columbia Tower Club. April 7th. 75th floor.</p></blockquote>
+
+      <div class="article-cta">
+        <p>Members of EO Seattle, GSBA, and Columbia Tower Club — register now to secure your spot.</p>
+        <a href="https://entrepreneurialmashup.thesavvydigitalco.com/" class="btn btn--c" target="_blank" rel="noopener">Register Now &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-sec">
+  <div class="ctr">
+    <h2>Related Articles</h2>
+    <div class="related-grid">
+      <a href="/blog/breaking-barriers-building-futures-carmen-best-shoulders-of-giants" class="related-card">
+        <div class="related-card-img"><span>Event Image</span></div>
+        <div class="related-card-body">
+          <span class="related-card-cat">reSpace Events</span>
+          <div class="related-card-title">Breaking Barriers, Building Futures: Carmen Best Takes the Stage at Shoulders of Giants</div>
+          <div class="related-card-meta">Mar 21, 2026 &middot; 5 min read</div>
+        </div>
+      </a>
+      <a href="/blog/congress-told-wall-street-stop-buying-your-neighborhood" class="related-card">
+        <div class="related-card-img"><span>Article Image</span></div>
+        <div class="related-card-body">
+          <span class="related-card-cat">Housing Policy &amp; Culture</span>
+          <div class="related-card-title">Congress Just Told Wall Street to Stop Buying Your Neighborhood</div>
+          <div class="related-card-meta">Mar 23, 2026 &middot; 8 min read</div>
+        </div>
+      </a>
+      <a href="/blog/respace-pre-sales-co-homeownership-west-leschi" class="related-card">
+        <div class="related-card-img"><span>Article Image</span></div>
+        <div class="related-card-body">
+          <span class="related-card-cat">reSpace News</span>
+          <div class="related-card-title">reSpace Launches Pre-Sales for Co-Homeownership in West Leschi</div>
+          <div class="related-card-meta">Mar 3, 2026 &middot; 4 min read</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ctr">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
+        <p>Co-homeownership for people who refuse to rent their whole lives.</p>
+        <div class="ft-tag">The new way to own.</div>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/#why">About</a></li>
+          <li><a href="/#how">How It Works</a></li>
+          <li><a href="/#props">Properties</a></li>
+          <li><a href="/media">The Ownership Conversation</a></li>
+          <li><a href="/events">Events</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>For You</h4>
+        <ul>
+          <li><a href="/buyers">Buyers</a></li>
+          <li><a href="/property-owners">Property Owners</a></li>
+          <li><a href="/brokers">Brokers</a></li>
+          <li><a href="/investors">Investors</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://instagram.com/respace_inc" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/respace-co-homeownership" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://youtube.com/@respaceinc" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.facebook.com/respacecohomeownership/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="mailto:office@reSpace.co">office@reSpace.co</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 reSpace. All rights reserved.</p>
+      <div class="ft-fdn"><span>1%</span> of every property sale goes to The reSpace Foundation</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
+</script>
+</body>
+</html>

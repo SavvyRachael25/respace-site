@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leschi Open House | reSpace Co-Homeownership</title>
+  <meta name="description" content="Five private suites in a Victorian mansion in West Leschi. Structured co-homeownership starting at $124,500. Book your viewing." />
+  <meta name="robots" content="noindex" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="Leschi Open House | reSpace Co-Homeownership" />
+  <meta property="og:description" content="Five private suites in a Victorian mansion in West Leschi. Structured co-homeownership starting at $124,500." />
+  <meta property="og:type" content="website" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#1A1A2E;--coral:#E8604C;--sand:#F5EFE6;--white:#FFFFFF;--sage:#7C9A7E;--body:#444444}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-weight:400;font-size:17px;color:var(--body);background:var(--white);overflow-x:hidden;line-height:1.6}
+    h1,h2,h3{font-family:'Clash Display',sans-serif;color:var(--navy);letter-spacing:-0.02em}
+    h1{font-weight:700;font-size:clamp(48px,7vw,88px);line-height:0.95}
+    h2{font-weight:600;font-size:clamp(32px,4.5vw,56px);line-height:1.0;letter-spacing:-0.01em}
+    h3{font-weight:600;font-size:clamp(20px,2.5vw,30px);line-height:1.15}
+    em{font-style:normal;color:var(--coral)}
+    .ctr{max-width:1200px;margin:0 auto;padding:0 32px}
+    @media(max-width:768px){.ctr{padding:0 20px}}
+    .sec{padding:120px 0;position:relative;overflow:hidden}
+    .lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:12px}
+    .lbl--lt{color:var(--white)}
+    .cr{width:48px;height:3px;background:var(--coral);margin:24px 0}
+    .gh{position:absolute;font-family:'Clash Display',sans-serif;font-weight:700;pointer-events:none;user-select:none;line-height:1;white-space:nowrap}
+    .wm{font-family:'DM Sans',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.02em;text-decoration:none;display:inline-flex;align-items:baseline}
+    .wm .re{color:var(--coral)}.wm .sp{color:var(--navy)}.wm--lt .sp{color:var(--white)}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;padding:14px 28px;border-radius:2px;transition:transform .15s,box-shadow .15s,background .15s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn--c{background:var(--coral);color:var(--white)}.btn--c:hover{background:#d4503f;box-shadow:0 4px 20px rgba(232,96,76,.35)}
+    .btn--n{background:var(--navy);color:var(--white)}.btn--n:hover{background:#0f0f1e;box-shadow:0 4px 20px rgba(26,26,46,.35)}
+    .btn--ow{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.6)}.btn--ow:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
+    .btn--on{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}.btn--on:hover{background:var(--navy);color:var(--white)}
+    .btn--sm{padding:10px 20px;font-size:14px}
+    .btn:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Nav */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,26,46,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .3s,box-shadow .3s}
+    nav.scrolled{background:rgba(26,26,46,.97);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto;padding:0 32px}
+    .nav-lk{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-lk a{font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--white);text-decoration:none;opacity:.9;transition:opacity .15s}
+    .nav-lk a:hover{opacity:1}
+    .nav-ct{display:flex;align-items:center;gap:12px}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .ham span{display:block;width:22px;height:2px;background:var(--white)}
+    @media(max-width:960px){.nav-lk,.nav-ct{display:none}.ham{display:flex}}
+    .mob{display:none;position:fixed;inset:0;background:var(--navy);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+    .mob.open{display:flex}
+    .mob a{font-family:'Clash Display',sans-serif;font-weight:600;font-size:28px;color:var(--white);text-decoration:none}
+    .mob a:hover{color:var(--coral)}
+    .mob-x{position:absolute;top:24px;right:32px;font-size:28px;color:var(--white);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif}
+
+    /* Footer */
+    footer{background:var(--navy);padding:80px 0 40px}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+    .ft-brand p{margin-top:16px;font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;max-width:260px}
+    .ft-tag{margin-top:20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;color:var(--coral)}
+    .ft-col h4{font-family:'DM Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px}
+    .ft-col ul{list-style:none}.ft-col li{margin-bottom:12px}
+    .ft-col a{font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s}
+    .ft-col a:hover{color:var(--white)}
+    .ft-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .ft-bot p{font-size:13px;color:rgba(255,255,255,.55)}
+    .ft-fdn{font-size:13px;color:rgba(255,255,255,.55)}.ft-fdn span{color:var(--coral)}
+    @media(max-width:768px){.ft-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.ft-grid{grid-template-columns:1fr}}
+
+    /* Newsletter */
+    .rs-inline-card{background:var(--navy,#1A1A2E);border-radius:12px;padding:32px 28px;text-align:center}
+    .rs-inline-title{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:6px}
+    .rs-inline-sub{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:20px}
+    .rs-inline-row{display:flex;gap:8px}
+    .rs-inline-input{flex:1;padding:12px 14px;font-size:15px;font-family:'DM Sans',sans-serif;border:1.5px solid rgba(255,255,255,.2);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;transition:border-color .2s}
+    .rs-inline-input:focus{outline:none;border-color:var(--coral,#E8604C);box-shadow:0 0 0 3px rgba(232,96,76,.25)}
+    .rs-inline-input::placeholder{color:rgba(255,255,255,.4)}
+    .rs-inline-btn{padding:12px 24px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;color:#fff;background:var(--coral,#E8604C);border:none;border-radius:8px;cursor:pointer;transition:background .2s;white-space:nowrap}
+    .rs-inline-btn:hover{background:#d4503f}
+    .rs-inline-btn:disabled{opacity:.6;cursor:not-allowed}
+    .rs-inline-success{display:none;color:#fff;font-size:15px;padding:8px 0}
+    .rs-inline-success strong{color:var(--coral,#E8604C)}
+    .rs-inline-error{display:none;color:#FCA5A5;font-size:13px;margin-top:8px}
+
+    /* Announcement bar */
+    .announce-bar{background:var(--coral);padding:12px 32px;text-align:center;position:relative;z-index:101}
+    .announce-bar a{font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;color:var(--white);text-decoration:none;letter-spacing:.04em}
+    .announce-bar a:hover{text-decoration:underline}
+
+    /* Hero */
+    .oh-hero{background:var(--navy);padding:140px 0 100px;position:relative;overflow:hidden}
+    .oh-hero h1{color:var(--white);margin-top:8px}
+    .oh-subhead{font-family:'Clash Display',sans-serif;font-weight:500;font-size:clamp(20px,2.5vw,28px);color:rgba(255,255,255,.75);margin-top:16px;line-height:1.3}
+    .oh-detail{font-size:17px;color:rgba(255,255,255,.6);margin-top:12px}
+    .oh-info-grid{display:grid;grid-template-columns:repeat(2,auto);gap:0;margin-top:40px;max-width:480px;border:1px solid rgba(255,255,255,.12);border-radius:4px;overflow:hidden}
+    .oh-info-cell{padding:20px 28px;border-right:1px solid rgba(255,255,255,.08)}
+    .oh-info-cell:nth-child(even){border-right:none}
+    .oh-info-cell:nth-child(n+3){border-top:1px solid rgba(255,255,255,.08)}
+    .oh-info-label{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:6px}
+    .oh-info-value{font-family:'Clash Display',sans-serif;font-weight:600;font-size:20px;color:var(--white)}
+    .oh-info-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:3px}
+    .oh-actions{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap}
+
+    /* Suites */
+    .suites-sec{background:var(--sand);padding:100px 0;position:relative;overflow:hidden}
+    .suites-hd{margin-bottom:12px}
+    .suites-venue{font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;color:var(--body);opacity:.65;margin-bottom:48px;margin-top:4px}
+    .suites-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media(max-width:700px){.suites-grid{grid-template-columns:1fr}}
+    .suite-card{background:var(--white);border-radius:4px;padding:36px;border:1px solid rgba(26,26,46,.07)}
+    .suite-name{font-family:'Clash Display',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-bottom:10px}
+    .suite-desc{font-size:15px;line-height:1.65;color:var(--body);margin-bottom:16px}
+    .suite-price{font-family:'Clash Display',sans-serif;font-weight:700;font-size:26px;color:var(--coral)}
+    .shared-note{margin-top:48px;background:rgba(26,26,46,.04);border-left:3px solid var(--coral);padding:20px 24px;border-radius:0 4px 4px 0}
+    .shared-note p{font-size:15px;color:var(--body);line-height:1.65}
+    .shared-note strong{color:var(--navy);font-weight:700}
+
+    /* Cost comparison */
+    .cost-sec{background:var(--navy);padding:100px 0;position:relative;overflow:hidden}
+    .cost-sec h2{color:var(--white);margin-bottom:48px}
+    .cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:640px;border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
+    .cost-cell{padding:32px 28px;border-right:1px solid rgba(255,255,255,.08)}
+    .cost-cell:last-child{border-right:none}
+    .cost-label{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;line-height:1.4}
+    .cost-value{font-family:'Clash Display',sans-serif;font-weight:700;font-size:clamp(28px,4vw,42px);color:var(--coral)}
+    .cost-body{margin-top:32px;max-width:560px;font-size:16px;color:rgba(255,255,255,.65);line-height:1.7}
+    @media(max-width:600px){.cost-grid{grid-template-columns:1fr}.cost-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}}
+
+    /* How it works */
+    .how-sec{background:var(--white);padding:100px 0}
+    .how-sec h2{margin-bottom:40px}
+    .how-what{font-size:17px;color:var(--body);margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid rgba(26,26,46,.08)}
+    .how-what strong{color:var(--navy);font-weight:700}
+    .how-features{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:40px}
+    @media(max-width:768px){.how-features{grid-template-columns:1fr}}
+    .how-feat{padding:28px;background:var(--sand);border-radius:4px}
+    .how-feat-title{font-family:'Clash Display',sans-serif;font-weight:600;font-size:18px;color:var(--navy);margin-bottom:10px}
+    .how-feat p{font-size:15px;line-height:1.65;color:var(--body)}
+    .how-cta{margin-top:40px}
+
+    /* Booking */
+    .booking-sec{background:var(--sand);padding:100px 0;position:relative;overflow:hidden}
+    .booking-sec h2{margin-bottom:12px}
+    .booking-body{font-size:17px;color:var(--body);margin-bottom:40px;line-height:1.7}
+    .schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px}
+    @media(max-width:700px){.schedule-grid{grid-template-columns:1fr}}
+    .schedule-block{background:var(--white);border-radius:4px;padding:28px;border:1px solid rgba(26,26,46,.07)}
+    .schedule-block-title{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+    .schedule-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(26,26,46,.06)}
+    .schedule-row:last-child{border-bottom:none}
+    .schedule-day{font-size:15px;font-weight:600;color:var(--navy)}
+    .schedule-time{font-size:14px;color:var(--body);opacity:.7}
+    .booking-note{font-size:14px;color:var(--body);opacity:.7;margin-bottom:36px;line-height:1.65}
+    .ghl-form-placeholder{background:var(--white);border-radius:8px;padding:48px;text-align:center;border:2px dashed rgba(26,26,46,.12)}
+    .ghl-form-placeholder p{font-size:14px;color:rgba(26,26,46,.45);font-family:'DM Sans',sans-serif}
+    .ghl-form-placeholder strong{display:block;font-family:'Clash Display',sans-serif;font-size:18px;color:var(--navy);margin-bottom:8px}
+
+    /* Create your space */
+    .create-sec{background:var(--navy);padding:100px 0;position:relative;overflow:hidden}
+    .create-sec h2{color:var(--white);margin-bottom:12px}
+    .create-body{font-size:17px;color:rgba(255,255,255,.75);margin-bottom:8px}
+    .create-sub{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:40px;line-height:1.65}
+
+    /* New way to own */
+    .nwo-sec{background:var(--white);padding:100px 0}
+    .nwo-sec h2{margin-bottom:8px}
+    .nwo-subhead{font-size:20px;color:var(--body);margin-bottom:16px;font-weight:600}
+    .nwo-body{font-size:17px;color:var(--body);max-width:640px;line-height:1.7;margin-bottom:56px}
+    .nwo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media(max-width:700px){.nwo-grid{grid-template-columns:1fr}}
+    .nwo-card{background:var(--sand);border-radius:4px;padding:28px}
+    .nwo-card-title{font-family:'Clash Display',sans-serif;font-weight:600;font-size:18px;color:var(--navy);margin-bottom:10px}
+    .nwo-card p{font-size:15px;line-height:1.65;color:var(--body)}
+    .nwo-tags{margin-top:48px;display:flex;flex-wrap:wrap;gap:10px}
+    .nwo-tag{display:inline-block;padding:8px 16px;border:1.5px solid rgba(26,26,46,.15);border-radius:2px;font-size:13px;font-weight:600;color:var(--navy)}
+    .nwo-statement{margin-top:40px;font-family:'Clash Display',sans-serif;font-weight:700;font-size:clamp(22px,3vw,36px);color:var(--navy);line-height:1.2}
+
+    /* Foundation */
+    .foundation-sec{background:var(--coral);padding:80px 0}
+    .foundation-sec h3{font-family:'Clash Display',sans-serif;font-weight:700;font-size:clamp(24px,3vw,36px);color:var(--white);margin-bottom:16px;letter-spacing:-0.02em}
+    .foundation-sec p{font-size:17px;color:rgba(255,255,255,.85);max-width:640px;line-height:1.7}
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  <a href="#booking">OPEN HOUSE — The First Collection · Now Showing</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-in">
+    <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
+    <ul class="nav-lk">
+      <li><a href="/buyers">Own</a></li>
+      <li><a href="/#props">Properties</a></li>
+      <li><a href="/#how">How It Works</a></li>
+      <li><a href="/property-owners">For Owners</a></li>
+      <li><a href="/brokers">Brokers</a></li>
+    </ul>
+    <div class="nav-ct"><a href="#booking" class="btn btn--c btn--sm">Find Your Space</a></div>
+    <button class="ham" aria-label="Open navigation menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', document.getElementById('mob').classList.toggle('open').toString())" type="button"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <button class="mob-x" aria-label="Close navigation menu" onclick="document.getElementById('mob').classList.remove('open')" type="button">&times;</button>
+  <a href="/buyers" onclick="document.getElementById('mob').classList.remove('open')">Own</a>
+  <a href="/#props" onclick="document.getElementById('mob').classList.remove('open')">Properties</a>
+  <a href="/#how" onclick="document.getElementById('mob').classList.remove('open')">How It Works</a>
+  <a href="/property-owners" onclick="document.getElementById('mob').classList.remove('open')">For Owners</a>
+  <a href="/brokers" onclick="document.getElementById('mob').classList.remove('open')">Brokers</a>
+  <a href="#booking" class="btn btn--c" onclick="document.getElementById('mob').classList.remove('open')">Book a Viewing</a>
+</div>
+
+<!-- HERO -->
+<section class="oh-hero">
+  <div class="gh" style="bottom:-20px;right:-30px;font-size:clamp(120px,18vw,260px);color:rgba(255,255,255,.04)">re</div>
+  <div class="ctr">
+    <span class="lbl lbl--lt">Open House — Two Weekends</span>
+    <h1>The Leschi Collection.</h1>
+    <p class="oh-subhead">Homeownership in The Victorian Mansion on the Hill.</p>
+    <p class="oh-detail">West Leschi &mdash; prices starting at $124K&ndash;$249K.</p>
+    <div class="oh-info-grid">
+      <div class="oh-info-cell">
+        <div class="oh-info-label">When</div>
+        <div class="oh-info-value" style="font-size:17px;font-family:'DM Sans',sans-serif;font-weight:700;">March 21–22 &amp; March 28–29</div>
+        <div class="oh-info-sub">+ Weekdays</div>
+        <div class="oh-info-sub">By Appointment, 10 AM–2 PM</div>
+      </div>
+      <div class="oh-info-cell">
+        <div class="oh-info-label">Suites From</div>
+        <div class="oh-info-value">$124,500</div>
+      </div>
+    </div>
+    <div class="oh-actions">
+      <a href="#booking" class="btn btn--c">Book Your Viewing Time</a>
+      <a href="#suites" class="btn btn--ow">Explore the Suites</a>
+    </div>
+  </div>
+</section>
+
+<!-- SUITES -->
+<section class="suites-sec" id="suites">
+  <div class="ctr">
+    <div class="suites-hd">
+      <h2>Five Private Suites. One Iconic Address.</h2>
+    </div>
+    <p class="suites-venue">The Victorian Mansion on the Hill</p>
+    <div class="suites-grid">
+
+      <div class="suite-card">
+        <div class="suite-name">The Atelier</div>
+        <p class="suite-desc">Lower level suite with private entrance, direct access to lower wet bar, media room + shared backyard space.</p>
+        <div class="suite-price">Own From $249,000</div>
+      </div>
+
+      <div class="suite-card">
+        <div class="suite-name">The Promenade</div>
+        <p class="suite-desc">Second floor suite with private sitting area, wet bar, coffee station and wraparound balcony.</p>
+        <div class="suite-price">Own From $197,500</div>
+      </div>
+
+      <div class="suite-card">
+        <div class="suite-name">The Gable</div>
+        <p class="suite-desc">Southwest facing second floor suite with wet bar + coffee station.</p>
+        <div class="suite-price">Own From $124,500</div>
+      </div>
+
+      <div class="suite-card">
+        <div class="suite-name">The Conservatory</div>
+        <p class="suite-desc">Main floor suite with same floor access to shared coworking space, living room + kitchen.</p>
+        <div class="suite-price">Own From $189,500</div>
+      </div>
+
+      <div class="suite-card">
+        <div class="suite-name">The Outlook</div>
+        <p class="suite-desc">Third floor suite with wet bar, coffee station and stunning skyline views.</p>
+        <div class="suite-price">Own From $197,500</div>
+      </div>
+
+    </div>
+    <div class="shared-note">
+      <p><strong>Shared Spaces:</strong> Designer kitchen. Co-working space. Lower Level Media lounge. Landscaped backyard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COST COMPARISON -->
+<section class="cost-sec">
+  <div class="gh" style="bottom:-20px;left:-40px;font-size:clamp(100px,16vw,220px);color:rgba(255,255,255,.03)">own</div>
+  <div class="ctr">
+    <h2>The Math That Changes Everything</h2>
+    <div class="cost-grid">
+      <div class="cost-cell">
+        <div class="cost-label">Average one-bedroom rent<br>in a major city</div>
+        <div class="cost-value">~$2,395<span style="font-size:18px;font-family:'DM Sans',sans-serif;font-weight:400;">/mo</span></div>
+      </div>
+      <div class="cost-cell">
+        <div class="cost-label">Estimated monthly<br>co-homeownership cost</div>
+        <div class="cost-value" style="font-size:clamp(22px,3vw,32px);">$1,485 – $2,590<span style="font-size:16px;font-family:'DM Sans',sans-serif;font-weight:400;">/mo</span></div>
+      </div>
+    </div>
+    <p class="cost-body">You already pay enough to own. Monthly includes home loan, taxes, insurance, maintenance, landscaping, housekeeping, and property management.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-sec">
+  <div class="ctr">
+    <span class="lbl">How It Works</span>
+    <h2>Simple Structure. Real Ownership.</h2>
+    <div class="cr"></div>
+    <p class="how-what"><strong>What do you get?</strong> Co-homeowners own an interest in the entire property.</p>
+    <div class="how-features">
+      <div class="how-feat">
+        <div class="how-feat-title">Your Own Space</div>
+        <p>Ownership agreement gives you your own private suite and shared common areas.</p>
+      </div>
+      <div class="how-feat">
+        <div class="how-feat-title">Individual Ownership</div>
+        <p>Individual ownership + separate loans. In-house financing available.</p>
+      </div>
+      <div class="how-feat">
+        <div class="how-feat-title">The Best Part?</div>
+        <p>Co-homeowners are not tied together.</p>
+      </div>
+    </div>
+    <div class="how-cta">
+      <a href="#booking" class="btn btn--c">RSVP Here</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-sec" id="booking">
+  <div class="ctr">
+    <span class="lbl">Open House</span>
+    <h2>Book Your Viewing Time</h2>
+    <p class="booking-body">Walk through the home. See the suites in person. Ask questions. No pressure, no commitment.</p>
+
+    <div class="schedule-grid">
+      <div class="schedule-block">
+        <div class="schedule-block-title">Weekend 1</div>
+        <div class="schedule-row">
+          <span class="schedule-day">Saturday March 21</span>
+          <span class="schedule-time">9:00 AM – 12:00 PM</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Sunday March 22</span>
+          <span class="schedule-time">9:00 AM – 3:00 PM</span>
+        </div>
+      </div>
+      <div class="schedule-block">
+        <div class="schedule-block-title">Weekend 2</div>
+        <div class="schedule-row">
+          <span class="schedule-day">Saturday March 28</span>
+          <span class="schedule-time">4:00 PM – 8:00 PM</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Sunday March 29</span>
+          <span class="schedule-time">9:00 AM – 11:00 AM</span>
+        </div>
+      </div>
+      <div class="schedule-block">
+        <div class="schedule-block-title">Weekday Appointments</div>
+        <div class="schedule-row">
+          <span class="schedule-day">Monday – Friday</span>
+          <span class="schedule-time">10:00 AM – 2:00 PM · By appointment</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="booking-note">Walk-ins welcome on weekends. Weekday viewings by appointment — ideal for brokers and investors.</p>
+
+    <div class="ghl-form-placeholder">
+      <strong>Leschi Suite Interest</strong>
+      <p>GHL form embed — form name: "Leschi Suite Interest"</p>
+    </div>
+  </div>
+</section>
+
+<!-- CREATE YOUR SPACE -->
+<section class="create-sec" id="hold">
+  <div class="ctr">
+    <span class="lbl lbl--lt">Create Your Space</span>
+    <h2 style="color:var(--white);">Create Your <em>Space</em>.</h2>
+    <p class="create-body">Ready to stop renting and start owning?</p>
+    <p class="create-sub">Fill out this quick form and we'll reach out with details on the suites that interest you. No pressure. Just a conversation about what's possible.</p>
+    <div class="ghl-form-placeholder" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15);">
+      <strong style="color:var(--white);">Leschi Suite Interest</strong>
+      <p style="color:rgba(255,255,255,.45);">GHL form embed — form name: "Leschi Suite Interest"</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE NEW WAY TO OWN -->
+<section class="nwo-sec">
+  <div class="ctr">
+    <h2>The New Way to Own</h2>
+    <p class="nwo-subhead">What Is Co-Homeownership?</p>
+    <p class="nwo-body">reSpace transforms single-family homes in premier neighborhoods into small communities of individual owners. You get a private suite and shared living spaces for what you already pay to rent.</p>
+
+    <div class="nwo-grid">
+      <div class="nwo-card">
+        <div class="nwo-card-title">Your Own Private Suite</div>
+        <p>Ensuite bath, walk-in closet, private washer/dryer, wet bar, sitting area, and workspace. Your space. Your lock.</p>
+      </div>
+      <div class="nwo-card">
+        <div class="nwo-card-title">Shared Living Spaces</div>
+        <p>Designer kitchen, co-working space, media lounge, and landscaped backyard. Community as an asset.</p>
+      </div>
+      <div class="nwo-card">
+        <div class="nwo-card-title">Real Ownership, Not Rent</div>
+        <p>Membership interest in a single-purpose LLC. Your own loan. Not tied to other co-owners.</p>
+      </div>
+      <div class="nwo-card">
+        <div class="nwo-card-title">All-Inclusive Monthly</div>
+        <p>Home loan, taxes, insurance, maintenance, landscaping, housekeeping, and property management.</p>
+      </div>
+      <div class="nwo-card">
+        <div class="nwo-card-title">Premier Neighborhood</div>
+        <p>West Leschi. Traditional homes start at $1.5M+. With reSpace, own starting at $124,500.</p>
+      </div>
+      <div class="nwo-card">
+        <div class="nwo-card-title">Owner-Occupied Only</div>
+        <p>Every co-owner lives here. No short-term rentals. A real community of people who chose this home.</p>
+      </div>
+    </div>
+
+    <div class="nwo-tags">
+      <span class="nwo-tag">Structured co-homeownership</span>
+      <span class="nwo-tag">Inside a premier residential property</span>
+      <span class="nwo-tag">Individual ownership + separate loans</span>
+    </div>
+
+    <p class="nwo-statement">This is not a condo. Not a timeshare. Not a rental.</p>
+  </div>
+</section>
+
+<!-- FOUNDATION -->
+<section class="foundation-sec">
+  <div class="ctr">
+    <h3>The reSpace Foundation</h3>
+    <p>1% from every property supports The reSpace Foundation, a 501(c)(3) committed to expanding homeownership access. When you own with reSpace, you're part of a wealth-building movement.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ctr">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="/" class="wm wm--lt"><span class="re">re</span><span class="sp">Space</span></a>
+        <p>Co-homeownership for people who refuse to rent their whole lives.</p>
+        <div class="ft-tag">The new way to own.</div>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/#why">About</a></li>
+          <li><a href="/#how">How It Works</a></li>
+          <li><a href="/#props">Properties</a></li>
+          <li><a href="/media">The Ownership Conversation</a></li>
+          <li><a href="/events">Events</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>For You</h4>
+        <ul>
+          <li><a href="/buyers">Buyers</a></li>
+          <li><a href="/property-owners">Property Owners</a></li>
+          <li><a href="/brokers">Brokers</a></li>
+          <li><a href="/investors">Investors</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://instagram.com/respace_inc" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/respace-co-homeownership" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://youtube.com/@respaceinc" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.facebook.com/respacecohomeownership/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="mailto:office@reSpace.co">office@reSpace.co</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 reSpace. All rights reserved.</p>
+      <div class="ft-fdn"><span>1%</span> of every property sale goes to The reSpace Foundation</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
+</script>
+</body>
+</html>
