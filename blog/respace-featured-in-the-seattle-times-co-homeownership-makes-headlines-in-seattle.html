@@ -192,6 +192,11 @@
     .ft-fdn{font-size:13px;color:rgba(255,255,255,.55)}.ft-fdn span{color:var(--coral)}
     @media(max-width:768px){.ft-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:480px){.ft-grid{grid-template-columns:1fr}}
+  
+    .hero{position:relative;overflow:hidden}
+    .hero-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+    .hero-photo-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,46,.72) 0%,rgba(26,26,46,.85) 100%);z-index:1}
+    .hero-inner{position:relative;z-index:2}
   </style>
 </head>
 <!-- ═══ NAV ═══ -->
@@ -235,6 +240,8 @@
   <div class="ghost-type" aria-hidden="true">re</div>
 
   <header class="hero">
+    <div class="hero-photo" style="background-image:url('https://www.respace.co/assets/LeschiExterior_1-B2u_U1YN.webp')"></div>
+    <div class="hero-photo-ov"></div>
     <div class="hero-inner">
       <div class="cat-label">In the News</div>
       <h1><span class="coral">reSpace Featured in The Seattle Times</span>: Co-Homeownership Makes Headlines in Seattle</h1>
